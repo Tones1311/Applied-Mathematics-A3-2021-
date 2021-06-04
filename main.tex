@@ -53,8 +53,8 @@
 \section*{講義概要}
 本講義ではフーリエ解析と，それに関連の深いラプラス変換に関して，理論と応用について述べる．2回の小テストと期末試験により，成績評価を行う．具体的な割合としては，小テストが1回10点分，期末試験が80点分である．教科書として中村周『フーリエ解析』(朝倉書店)を用いるが，誤植が非常に多く，また本質的な間違いをしている部分もあるため，基本的にはこの講義ノートを参考にするとよい．なお，具体的な誤植については，PandAにアップロードした正誤表を確認すること．
 
-\chapter{フーリエ級数展開}
-\section{導入: 周期関数のフーリエ級数展開}
+\chapter{フーリエ級数展開} \label{chap1}
+\section{導入: 周期関数のフーリエ級数展開} \label{sec1-1}
 \(\mathbb{R}\)上の関数\(f(t)(t\in\mathbb{R})\)に対して，\(f\)が周期\(T\)の周期関数であるとは，
 \begin{equation*}
     \forall t\in\mathbb{R}, f(t+T)=f(t)
@@ -65,7 +65,7 @@
     f(t)=c+\sum_{n=1}^\infty a[n]\cos n\omega t+\sum_{n=1}^\infty b[n]\sin n\omega t \label{eq1-1}
 \end{equation}
 と定義される．但し，\(\displaystyle \omega=\frac{2\pi}{T}, c, a[n], b[n]\)は定数である．\eqref{eq1-1}の右辺の級数が「収束」すればフーリエ級数展開が定義できるが，本講義では，\eqref{eq1-1}がどのようなときに成り立ち，そのときどのような意味で収束するのかについて述べる．
-\section{三角関数の直交関係とフーリエ係数}
+\section{三角関数の直交関係とフーリエ係数} \label{sec1-2}
 \eqref{eq1-1}において，\(a[n], b[n](n=1, 2, \dots)\)のことを\textcolor{red}{フーリエ係数}という．この計算には，次の定理を用いる．
 \begin{theorem}\upshape{\bf{(三角関数の直交関係)}}
 \label{th1-1}
@@ -146,7 +146,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
     f(t)=\frac{a[0]}{2}+\sum_{n=1}^\infty b[n]\sin n\omega t
 \end{equation*}
 となる．これを\textcolor{red}{正弦フーリエ級数展開}という．
-\section{複素フーリエ変換}
+\section{複素フーリエ変換} \label{sec1-3}
 オイラーの公式\(e^{i\theta}=\cos\theta+i\sin\theta(i\mbox{は虚数単位})\)により，
 \begin{equation*}
     \cos\theta=\frac{1}{2}\left(e^{i\theta}+e^{-i\theta}\right), \sin\theta=\frac{1}{2i}\left(e^{i\theta}-e^{-i\theta}\right)
@@ -172,7 +172,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
     c[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t (n\in\mathbb{Z})
 \end{equation*}
 が得られる．
-\section{いくつかの実例}
+\section{いくつかの実例} \label{sec1-4}
 \begin{example}\upshape{\bf{(三角多項式)}} 
 \label{ex1-1}
 三角多項式とは，\(\sin\omega t, \cos\omega t\)の多項式である．例えば，
@@ -223,7 +223,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \end{equation*}
 となる．
 \end{example}
-\section{フーリエ級数の一様収束}
+\section{フーリエ級数の一様収束} \label{sec1-5}
 前節の例から想像されるように，広いクラスの周期関数\(f(t)\)に対してフーリエ級数展開が定義されるが，奇妙な例を考えると，連続でありながらフーリエ級数が収束しない点を持つ場合がある．このような，フーリエ級数の収束の問題は，数学的には興味深い問題だが，ここでは深入りせず，一つだけ定理を紹介するにとどめる．\\
 　\(\mathbb{R}\)上の関数\(f(t)\)が\textcolor{red}{リプシッツ連続}であるとは
 \begin{equation*}
@@ -235,7 +235,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \(f(t)\)がリプシッツ連続な周期関数ならば，フーリエ級数展開は\(f(t)\)に一様に収束する．
 \end{theorem}
 この定理を証明することが本章の目標となる．
-\section{有限フーリエ級数}
+\section{有限フーリエ級数} \label{sec1-6}
 フーリエ級数の理論の美しい点の一つは，幾何学的な構造を持つことである．すなわち，フーリエ級数展開とは，「関数のなす線形空間」のベクトルの，基底による直交分解であると考えることができる．この考え方を完全に述べるには関数解析の理論(ヒルベルト空間論)の知識が必要となるため，ここでは述べない．以下では主要なアイデアのみ述べる．\\
 　最初に線形代数の復習をしておこう．\(X=\mathbb{C}^N\)を\(N\)次元複素線形空間とする．また，その元を\(u=(u[0], \cdots, u[N-1])\in X\)とする．\(u, v\in X\)のエルミート内積は
 \begin{equation*}
@@ -298,7 +298,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \end{equation}
 が示された．
 \end{proof}
-\section{有限フーリエ級数の連続極限}
+\section{有限フーリエ級数の連続極限} \label{sec1-7}
 さて，有限フーリエ級数の極限として元の関数が得られることを証明しておこう．
 \begin{theorem}
 \label{th1-5}
@@ -377,7 +377,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 \end{equation*}
 が得られる．つまり，\(N\to\infty\)のとき\(f_N(t)\)が\(f(t)\)に一様収束することが示せた．
 \end{proof}
-\section{関数の空間の内積と直交関数系}
+\section{関数の空間の内積と直交関数系} \label{sec1-8}
 \(X\)を周期\(T\)の有界な周期関数で，\([0, T]\)上で積分可能な関数全体の集合とする．\(f, g\in X\)に対して，これらの\textcolor{red}{内積}を
 \begin{equation*}
     \langle f, g\rangle=\frac{1}{T}\int_0^T f(t)\overline{g(t)}\mathrm{d}t
@@ -442,7 +442,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
     \psi_0(t)=1, \psi_n^{(1)}(t)=\sqrt{2}\cos n\omega t, \psi_n^{(2)}(t)=\sqrt{2}\sin n\omega t
 \end{equation*}
 とおけば，\(\{\psi_0, \psi_1^{(1)}, \psi_2^{(1)}, \dots, \psi_1^{(2)}, \psi_2^{(2)}, \dots\}\)はやはり正規直交系である(定理\ref{th1-1})．以降も，主に複素フーリエ係数のみを考える．
-\section{正規直交基底とフーリエ級数の平均収束}
+\section{正規直交基底とフーリエ級数の平均収束} \label{sec1-9}
 \(\{f_n\}_{n=1}^\infty={f_1, f_2, \cdots}\)を\(X\)の正規直交系とする．\(\{f_n\}\)が\(X\)の\textcolor{red}{正規直交基底}，または\textcolor{red}{完全正規直交系}であるとは，全ての\(f\in X\)について
 \begin{equation*}
     \lim_{N\to\infty}\left|\left|f-\sum_{n=1}^N\langle f, f_n\rangle f_n\right|\right|=0
@@ -556,7 +556,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 \end{equation*}
 が導かれる．\(\varepsilon>0\)は任意だったから，\(N\)を大きくすれば左辺はいくらでも0に近づくことが分かる．これで主張は示された．
 \end{proof}
-\section{定理\ref{th1-3}の証明}
+\section{定理\ref{th1-3}の証明} \label{sec1-10}
 以下に示す3つの補題を組み合わせると，定理\ref{th1-3}は直ちに導かれる．
 \begin{lemma}
 \label{lem1-10}
@@ -642,7 +642,7 @@ d[n]&=&\frac{1}{hT}\int_0^T (f(t+h)-f(t))e^{-in\omega t}\mathrm{d}t=\frac{1}{h}(
 \(\{g_n(t)\}\)を，\(n\to\infty\)のときに\(g_n(t)\)が\(g(t)\)に一様収束するような連続関数列とする．このとき，\(g(t)\)は連続となる．
 \end{rem}
 定理\ref{th1-3}は補題\ref{lem1-11}と補題\ref{lem1-12}から直ちに導かれる．
-\section{ギッブス現象と総和法}
+\section{ギッブス現象と総和法} \label{sec1-11}
 この章においては，周期\(T\)の(リプシッツ)連続な周期関数\(f(t)\)のフーリエ級数が\(f(t)\)に一様収束することをすでに述べた．一方，連続とは限らない周期関数については，平均収束の意味でフーリエ級数が収束することを見た．連続でない関数のフーリエ級数は一様収束しない．なぜならば，フーリエ部分和\(S_N(t)\)は連続なので，もし一様収束したとすれば，極限\(f(t)\)も連続でなければならない．では，連続な点\(t\)では，フーリエ級数は\(f(t)\)に収束するのだろうか．この問いについては，次のような結果が知られている．
 \begin{theorem}
 \label{th1-13}
@@ -749,8 +749,8 @@ f_4(t)&=&\frac{4}{\pi}\sum_{n=0}^\infty\frac{\sin(2n+1)\omega t}{2n+1} \\
 \end{equation*}
 がハン窓と呼ばれる関数である．定理\ref{th1-14}と同様に，連続関数のフーリエ級数のハン窓による部分和は，元の関数に一様収束することが証明できる．
 \end{example}
-\chapter{フーリエ級数の性質と応用}
-\section{フーリエ級数と微分}
+\chapter{フーリエ級数の性質と応用} \label{chap2}
+\section{フーリエ級数と微分} \label{sec2-1}
 最初に，微分方程式への応用の準備として，微分とフーリエ級数展開の関係を調べよう．\(f\)を周期\(T\)の周期関数で
 \begin{equation*}
     f(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t}
@@ -890,7 +890,7 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
     \{a\cos n\omega t+b\sin n\omega t|a, b\in\mathbb{C}\}
 \end{equation*}
 という2次元の空間を成す．
-\section{偏微分方程式への応用: 熱方程式}
+\section{偏微分方程式への応用: 熱方程式} \label{sec2-2}
 フーリエが最初に「フーリエ級数」を用いたのは，熱方程式の解を求める方法としてであった．この節では，この問題について考えてみよう．長さ\(R>0\)の棒を区間\([0, R]\)と考えて，端点の温度が0であるとしよう．この問題は，次の偏微分方程式で記述される．
 \begin{equation}
     \label{eq2-4}
@@ -1025,7 +1025,15 @@ u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R],
 \begin{equation}
     \left|b[n]e^{-n^2\omega^2 t}\right|\leq C(1+\omega^2 n^2t)^{-M} \label{eq2-7}
 \end{equation}
-が成り立つ．従って，系\ref{cor2-4}より\(t>0\)なら\(u(x, t)\)は\(x, t\)について\(C^\infty\)級関数である．特に
+が成り立つ．従って，系\ref{cor2-4}より\(t>0\)なら\(u(x, t)\)は\(x\)について\(C^\infty\)級である．また，任意の自然数\(K\)に対して，定数\(C_K>0\)が存在して
+\begin{equation*}
+    \left|(n^2\omega^2)^K b[n]e^{-n^2\omega^2 t}\sin n\omega x\right|\leq C_K(1+n^2\omega^2 t)^{-2} (n\in\mathbb{Z})
+\end{equation*}
+となる．よって
+\begin{equation*}
+    \frac{\partial^K u}{\partial t^K}(x, t)=\sum_{n=1}^\infty　(-n^2\omega^2)^K b[n]e^{-n^2\omega^2 t}\sin n\omega x
+\end{equation*}
+は絶対収束する(定理\ref{th2-3}の証明を参照せよ)．故に\(u(x, t)\)は\(t\)についても\(C^\infty\)級である．特に
 \begin{eqnarray*}
 \frac{\partial}{\partial t}u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)(-\omega^2 n^2)e^{-\omega^2 n^2t} \\
 \frac{\partial^2}{\partial x^2}u(x, t)&=&\sum_{n=1}^\infty b[n](-\omega^2 n^2)\sin(n\omega x)e^{-\omega^2 n^2t}
@@ -1078,4 +1086,153 @@ u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R],
 \end{equation*}
 となり，\(w(x, t)\equiv 0\)でなければならない．つまり，\(u(x, t)\equiv\Tilde{u}(x, t)\)である．これで定理の主張はすべて示された．
 \end{proof}
+\section{積のフーリエ級数展開と畳み込み} \label{sec2-4}
+まず，次のような記号を定義する．\(f\)が周期\(T\)の周期関数のとき，\(f\)のフーリエ係数を
+\begin{equation*}
+    (\mathcal{F}f)[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t (n\in\mathbb{Z})
+\end{equation*}
+と書く．すなわち，\(\mathcal{F}\)は周期関数の空間\(X\)から数列の集合への，フーリエ係数を対応させる線形写像(作用素)である．逆に，\(\{c[n]\}_{n=-\infty}^\infty\)が数列であるとき，
+\begin{equation*}
+    (\mathcal{F}^* c)(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t} (t\in\mathbb{R})
+\end{equation*}
+と書く．\(\mathcal{F}^* c\)は，もちろん一般に収束するとは限らないが
+\begin{equation}
+    \sum_{n=-\infty}^\infty |c[n]|<\infty \label{eq2-15}
+\end{equation}
+が満たされれば，補題\ref{lem1-12}より\(\mathcal{F}^* c\)は一様収束し，\(\mathcal{F}\mathcal{F}^* c=c\)が成立する．条件\eqref{eq2-15}を\(l^1\)-条件と呼び，\eqref{eq2-15}を満たす数列全体の集合を\(l^1(\mathbb{Z})\)と書く．補題\ref{lem1-11}によれば，\(f\)がリプシッツ連続ならば\(\mathcal{F}f\in l^1(\mathbb{Z})\)であり，\(\mathcal{F}^*\mathcal{F}f=f\)が成り立つ．また，一般の\(f\in X\)についても，\ref{sec1-9}節の定理\ref{th1-6}より，\(\mathcal{F}^*\mathcal{F}f=f\)が平均収束の意味で成り立つ．以上のような意味で，\(\mathcal{F}\)と\(\mathcal{F}^*\)は互いの逆写像になっている．つまり
+\begin{equation*}
+    \mathcal{F}^*=\mathcal{F}^{-1}
+\end{equation*}
+と考えてよい．\\
+　さて，\(f, g\)を周期\(T\)の連続な周期関数で，\(\mathcal{F}f, \mathcal{F}g\in l^1(\mathbb{Z})\)であると仮定する．\(c=\mathcal{F}f, d=\mathcal{F}g\)と書けば
+\begin{eqnarray*}
+f(t)g(t)&=&\sum_{m=-\infty}^\infty c[m]e^{im\omega t}\sum_{n=-\infty}^\infty d[n]e^{in\omega t} \\
+&=&\sum_{m=-\infty}^\infty\sum_{n=-\infty}^\infty c[m]d[n]e^{i(n+m)\omega t}
+\end{eqnarray*}
+と書ける．仮定より
+\begin{equation*}
+    \sum_{m=-\infty}^\infty\sum_{n=-\infty}^\infty|c[m]d[n]|=\left(\sum_{m=-\infty}^\infty |c[m]|\right)\left(\sum_{n=-\infty}^\infty |d[n]|\right)<\infty
+\end{equation*}
+なので，上の二重数列は(\(t\)について一様に)絶対収束する．従って，無限和のとり方は自由に変えられるので，\(n+m=k\)と変数変換して，\(m\)に関する和を\(k\)に関する和に書き換えると
+\begin{eqnarray*}
+f(t)g(t)&=&\sum_{m=-\infty}^\infty\sum_{k=-\infty}^\infty c[m]d[k-m]e^{ik\omega t} \\
+&=&\sum_{k=-\infty}^\infty\left(\sum_{m=-\infty}^\infty c[m]d[k-m]\right)e^{ik\omega t}
+\end{eqnarray*}
+と書きなおせる．つまり，\(f(t)g(t)\)のフーリエ係数は
+\begin{equation}
+    p[n]=\sum_{m=-\infty}^\infty c[m]d[n-m] (n\in\mathbb{Z}) \label{eq2-16}
+\end{equation}
+で与えられる．\(p\in l^1(\mathbb{Z})\)であることは
+\begin{eqnarray*}
+\sum_{n=-\infty}^\infty |p[n]|&\leq&\sum_{n=-\infty}^\infty\sum_{m=-\infty}^\infty|c[m]||d[n-m]| \\
+&=&\left(\sum_{m=-\infty}^\infty|c[m]|\right)\left(\sum_{n=-\infty}^\infty|d[n]|\right)<\infty
+\end{eqnarray*}
+から従う．一般に，2つの数列\(c, d\)に対して\eqref{eq2-16}で与えられる数列\(p\)を(和が存在すれば)\(c*d\)と書き，\textcolor{red}{畳み込み}と呼ぶ．上で見たように，\(c, d\in l^1(\mathbb{Z})\)ならば\(c*d\in l^1(\mathbb{Z})\)である．また，\(n-m=k\)とおくことにより
+\begin{equation*}
+    (c*d)[n]=\sum_{m=-\infty}^\infty c[m]d[n-m]=\sum_{k=-\infty}^\infty c[n-k][d[k]=(d*c)[n]
+\end{equation*}
+なので，\(c*d=d*c\)が成り立つ．つまり，畳み込みは可換である．以上より，次の定理が示された．
+\begin{theorem}
+\label{th2-11}
+\(f, g\)を連続な周期\(T\)の周期関数で，\(\mathcal{F}f, \mathcal{F}g\)は\(l^1\)-条件\eqref{eq2-15}を満たすと仮定する．このとき，\(fg\)のフーリエ係数は
+\begin{equation*}
+    \mathcal{F}(fg)=(\mathcal{F}f)*(\mathcal{F}g)\in l^1(\mathbb{Z})
+\end{equation*}
+で与えられる．
+\end{theorem}
+さて，今度はフーリエ係数の積に対応する周期関数は何かを考えよう．つまり，\(f, g\)を有界な周期\(T\)の周期関数とするとき，\((\mathcal{F}f)[n](\mathcal{F}g)[n]\)をフーリエ係数とするような関数は何かを計算する．まず，
+\begin{eqnarray*}
+(\mathcal{F}f)[n](\mathcal{F}g)[n]&=&\left(\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t\right)\left(\frac{1}{T}\int_0^T g(s)e^{-in\omega s}\mathrm{d}s\right) \\
+&=&\frac{1}{T^2}\int_0^T\int_0^T f(t)g(s)e^{-in\omega(t+s)}\mathrm{d}s\mathrm{d}t \\
+&=&\frac{1}{T^2}\int_0^T\int_t^{t+T} f(t)g(u-t)e^{-in\omega u}\mathrm{d}u\mathrm{d}t \\
+&=&\frac{1}{T}\int_0^T\left(\frac{1}{T}\int_0^T f(t)g(u-t)\mathrm{d}t\right)e^{-in\omega u}\mathrm{d}u
+\end{eqnarray*}
+である．ここで，積分の順序が交換可能であること(フビニの定理)と\(g\)の周期性を用いた．これより，\(\mathcal{F}f\cdot\mathcal{F}g\)は\(\displaystyle\frac{1}{T}\int_0^T f(s)g(t-s)\mathrm{d}s\)のフーリエ係数であることが分かった．数列の場合と同じように，周期\(T\)の周期関数\(f, g\)に対して
+\begin{equation*}
+    f*g(t)=\int_0^T f(s)g(t-s)\mathrm{d}s (t\in\mathbb{R})
+\end{equation*}
+と定義し，\(f*g\)を\(f\)と\(g\)の\textcolor{red}{畳み込み}と呼ぶ．数列の場合と同様に
+\begin{equation*}
+    f*g=g*f
+\end{equation*}
+が成り立ち，\(f, g\)が有界なら\(f*g\)も有界である．実際，シュワルツの不等式より
+\begin{eqnarray*}
+|f*g(t)|&\leq&\int_0^T |f(s)||g(t-s)|\mathrm{d}s \\
+&\leq&\left(\int_0^T |f(s)|^2\mathrm{d}s\right)^{\frac{1}{2}}\left(\int_0^T |g(t-s)|^2\mathrm{d}s\right)^{\frac{1}{2}} \\
+&=&||f||||g||
+\end{eqnarray*}
+なので，\(f, g\)が有界でなくても，\(||f||, ||g||<\infty\)ならば\(f*g\)は有界である．以上より，次が証明された．
+\begin{theorem}
+\label{th2-12}
+\(f, g\)を周期\(T\)の有界な周期関数とする
+\footnote{ルベーグ積分の理論を用いれば，この仮定は，「\(f, g\)は可測で，\(\displaystyle\int|f|^2\mathrm{d}t<\infty, \int|g|^2\mathrm{d}t<\infty\)」で十分なことが分かる．可測空間の間の関数が可測であるとは，各可測集合に対して，その原像が可測であることを言う．応用の場面で現れる実数値関数は，可測関数であることが多い．可測空間(\(\sigma\)-加法族)とは，簡単に言えば，測度を定義できるための十分な性質を備えた集合族である．詳しくは，ルベーグ積分論の教科書を参照せよ．}
+．このとき，
+\begin{equation*}
+    (\mathcal{F}f)[n]\cdot(\mathcal{F}g)[n]=\frac{1}{T}\mathcal{F}(f*g)[n] (n\in\mathbb{Z})
+\end{equation*}
+が成り立つ．また，\(c, d\in l^1(\mathbb{Z})\)ならば
+\begin{equation*}
+    \mathcal{F}^*(cd)(t)=\frac{1}{T}(\mathcal{F}^* c)*(\mathcal{F}^* d)(t) (t\in\mathbb{R})
+\end{equation*}
+が成り立つ．
+\end{theorem}
+\section{フーリエ級数の総和法・再論} \label{sec2-5}
+\ref{sec1-11}節で論じた部分和の総和法は，前節で論じたフーリエ級数の積に対応する級数展開と考えることができる．つまり，\(G(s)\)を，\ref{sec1-11}節と同じく\([-1, 1]\)に台を持つ「重み関数」とするとき
+\begin{equation*}
+    g_N(t)=\frac{1}{T}\mathcal{F}^*\left(G\left(\frac{n}{N}\right)\right)(t)=\frac{1}{T}\sum_{n=-N}^N G\left(\frac{n}{N}\right)e^{in\omega t}
+\end{equation*}
+とおけば，\(f\)のフーリエ級数の重み関数\(G\)に対応する部分和\(S_N^G(t)\)は
+\begin{equation*}
+    S_N^G(t)=\mathcal{F}^*\left((\mathcal{F}f)[n]G\left(\frac{n}{N}\right)\right)(t)=(g_N*f)(t)=\int_0^T g_N(s)f(t-s)\mathrm{d}s
+\end{equation*}
+であることが分かる．
+\begin{example} \upshape{\bf{(フーリエ部分和)}}
+\label{ex2-7}
+フーリエ部分和の対応する重み関数\(G\)は
+\begin{equation*}
+    G(s)=
+    \begin{cases}
+    1 & (|s|\leq 1) \\
+    0 & (|s|>1)
+    \end{cases}
+\end{equation*}
+で与えられた．従って，対応する周期関数は，\(\omega\notin T\mathbb{Z}\)のとき\footnote{この場合分けは，途中で分母に出てくる\(\displaystyle\sin\frac{\omega t}{2}\)が0になるときを考慮したものである．}
+\begin{eqnarray*}
+D_N(t)&=&\frac{1}{T}\sum_{n=-N}^N e^{in\omega t} \\
+&=&\frac{1}{T}\left(1+\sum_{n=1}^N e^{in\omega t}+\sum_{n=1}^N e^{-in\omega t}\right) \\
+&=&\frac{1}{T}\left(1+\frac{e^{i\omega t}-e^{i(N+1)\omega t}}{1-e^{i\omega t}}+\frac{e^{-i\omega t}-e^{-i(N+1)\omega t}}{1-e^{-i\omega t}}\right) \\
+&=&\frac{1}{T}\frac{2\cos N\omega t-2\cos(N+1)\omega t}{2-2\cos\omega t} \\
+&=&\frac{1}{T}\frac{4\sin\left(\left(N+\frac{1}{2}\right)\omega t\right)\sin\frac{\omega t}{2}}{4\sin^2\frac{\omega t}{2}} \\
+&=&\frac{1}{T}\frac{\sin\left(N+\frac{1}{2}\right)\omega t}{\sin\frac{\omega t}{2}}
+\end{eqnarray*}
+となる．一方，\(t\in T\mathbb{Z}\)のときは\(\displaystyle D_N(t)=\frac{1}{T}(2N+1)\)であるから，上の計算結果と連続につながる．\(D_N(t)\)を\textcolor{red}{ディリクレ核}と呼ぶ．これを用いると，フーリエ部分和は
+\begin{equation*}
+    S_N(t)=D_N*f(t)
+\end{equation*}
+と書くことができる．
+\end{example}
+\begin{example} \upshape{\bf{(フェイエル和)}}
+\label{ex2-8}
+フェイエル和に対応する周期関数は
+\begin{equation*}
+    F_N(t)=\frac{1}{T}\sum_{n=-N}^N\frac{N-|n|}{N}e^{in\omega t}
+\end{equation*}
+であり，これは\textcolor{red}{フェイエル核}と呼ばれる．\(F_N(t)\)を計算してみると
+\begin{eqnarray*}
+F_N(t)&=&\frac{1}{TN}\sum_{n=0}^{N-1}\left(\sum_{k=-n}^n e^{in\omega t}\right) \\
+&=&\frac{1}{T}\sum_{n=0}^{N-1}D_n(t)=\frac{1}{TN}\frac{\sin\left(N+\frac{1}{2}\right)\omega t}{\sin\frac{\omega t}{2}}
+\end{eqnarray*}
+ここで
+\begin{equation*}
+    \cos(n+1)\omega t-\cos n\omega t=2\sin\left(\left(n+\frac{1}{2}\right)\omega t\right)\sin\frac{\omega t}{2}
+\end{equation*}
+を用いると
+\begin{eqnarray*}
+F_N(t)&=&\frac{1}{TN}\sum_{n=0}^{N-1}\frac{2(\cos(n+1)\omega t-\cos n\omega t)}{-2\sin^2\frac{\omega t}{2}} \\
+&=&\frac{1}{TN}\frac{2(\cos N\omega t-1)}{\sin^2\frac{\omega t}{2}} \\
+&=&\frac{1}{TN}\left(\frac{\sin\left(\frac{N\omega t}{2}\right)}{\sin\frac{\omega t}{2}}\right)^2
+\end{eqnarray*}
+を得る．
+\end{example}
+
 \end{document}
