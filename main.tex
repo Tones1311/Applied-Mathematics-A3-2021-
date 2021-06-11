@@ -99,8 +99,7 @@
 この右辺は，\(n\neq m\)のときは上式より0になる．\(n=m\)のときは，定数1の積分だから右辺は1になる．よって\eqref{eq1-2}が示された．他の式についても同様に示せる．
 \end{proof}
 積分と無限級数の和の順序交換ができる
-\footnote{
-正確には，
+\footnote{正確には，
 \begin{equation*}
     \sum_{n=1}^\infty\int_a^b g_n(x)\mathrm{d}x=\int_a^b\sum_{n=1}^\infty g_n(x)\mathrm{d}x
 \end{equation*}
@@ -393,8 +392,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
     ||f||=\sqrt{\langle f, f\rangle}=\left(\frac{1}{T}\int_0^T |f(t)|^2\mathrm{d}t\right)^{\frac{1}{2}}\geq 0
 \end{equation*}
 を\(f\)の\textcolor{red}{ノルム}(または\(L^2\)-ノルム)という．\(||f||=0\)であれば，\(f\)は実質上(ほとんど至るところで
-\footnote{
-測度空間において，ある性質\(P\)を満たさない集合の測度が0である場合，ほとんど至るところで\(P\)を満たすという．
+\footnote{測度空間において，ある性質\(P\)を満たさない集合の測度が0である場合，ほとんど至るところで\(P\)を満たすという．
 }
 )0の関数である．\\
 　次に，シュワルツの不等式と三角不等式を示しておこう．\(f, g\in X\)とする．任意の\(z\in\mathbb{C}\)に対して
@@ -519,8 +517,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
     &=&||g||^2+\left|\left|\sum_n (\langle f, f_n\rangle-a_n)f_n\right|\right|^2\geq||g||^2
 \end{eqnarray*}
 が成立する
-\footnote{
-この式より，簡単な計算で次の公式が従う．
+\footnote{この式より，簡単な計算で次の公式が従う．
 \begin{equation*}
     \left|\left|f-\sum_{n=1}^N a_nf_n\right|\right|^2-\left|\left|f-\sum_{n=1}^N\langle f, f_n\rangle f_n\right|\right|^2=\sum_n |\langle f, f_n\rangle-a_n|^2
 \end{equation*}
@@ -531,8 +528,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 では，定理\ref{th1-6}を証明しよう．
 \begin{proof}
 \(f\in X, \varepsilon>0\)を任意の小さな数とする．すると，リプシッツ連続な周期関数\(g\)で，\(\displaystyle ||f-g||<\frac{\varepsilon}{2}\)を満たすものを見つけることができる
-\footnote{
-この主張は，数学的にきちんと証明すると少し長くなるので，ここでは省略する．巻末の付録を参照すること．なお，ルベーグ積分の理論を用いれば，かなり一般的な関数について，この主張を証明することができる．
+\footnote{この主張は，数学的にきちんと証明すると少し長くなるので，ここでは省略する．巻末の付録を参照すること．なお，ルベーグ積分の理論を用いれば，かなり一般的な関数について，この主張を証明することができる．
 }
 ．すると，定理\ref{th1-5}より，\(N\)を十分大きくとれば
 \begin{equation*}
@@ -600,7 +596,7 @@ d[n]&=&\frac{1}{hT}\int_0^T (f(t+h)-f(t))e^{-in\omega t}\mathrm{d}t=\frac{1}{h}(
 \end{proof}
 \begin{lemma}
 \label{lem1-11}
-補題\upshape{\ref{lem1-10}}と同じ仮定の下で
+補題\ref{lem1-10}と同じ仮定の下で
 \begin{equation*}
     \sum_{n=-\infty}^\infty |c[n]|<\infty
 \end{equation*}
@@ -647,8 +643,7 @@ d[n]&=&\frac{1}{hT}\int_0^T (f(t+h)-f(t))e^{-in\omega t}\mathrm{d}t=\frac{1}{h}(
 \begin{theorem}
 \label{th1-13}
 \(f(t)\)を周期\(T\)の周期関数で，\([0, T]\)上で区分的に滑らか
-\footnote{
-ここでは，ある\(a_j(j=1, \dots, n-1)\)があって，\(f(t)\)が\([a_j, a_{j+1}]\)で\(C^1\)級であり，なおかつ\(f(a_j+0)(j<n), f(a_j-0)(j>0)\)が存在することを指す．但し\(a_0=0, a_n=T\)とする．端的に言えば，\(f(t)\)が\([0, T]\)上では有限個の不連続点以外では\(C^1\)級であり，なおかつ導関数が有界であることを指す．
+\footnote{ここでは，ある\(a_j(j=1, \dots, n-1)\)があって，\(f(t)\)が\([a_j, a_{j+1}]\)で\(C^1\)級であり，なおかつ\(f(a_j+0)(j<n), f(a_j-0)(j>0)\)が存在することを指す．但し\(a_0=0, a_n=T\)とする．端的に言えば，\(f(t)\)が\([0, T]\)上では有限個の不連続点以外では\(C^1\)級であり，なおかつ導関数が有界であることを指す．
 }
 と仮定する．このとき，フーリエ部分和\(S_N(t)\)は
 \begin{equation*}
@@ -702,8 +697,7 @@ f_4(t)&=&\frac{4}{\pi}\sum_{n=0}^\infty\frac{\sin(2n+1)\omega t}{2n+1} \\
 \end{example}
 このギッブス現象は，どのような不連続点の周りでも発生する，一般的な現象である．これを回避する方法として，総和法という方法がある．\\
 　\(G(s)\)を\([-1, 1]\)に台を持つ
-\footnote{
-ここでは，\(s\notin[-1, 1]\)のとき\(G(s)=0\)となることをいう．
+\footnote{ここでは，\(s\notin[-1, 1]\)のとき\(G(s)=0\)となることをいう．
 }
 有界関数で，\(G(0)=1\)，しかも\(s=0\)で連続であると仮定する．このとき，\textcolor{red}{重み関数}\(G(s)\)に対応する部分和を
 \begin{equation*}
@@ -756,8 +750,7 @@ f_4(t)&=&\frac{4}{\pi}\sum_{n=0}^\infty\frac{\sin(2n+1)\omega t}{2n+1} \\
     f(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t}
 \end{equation*}
 というフーリエ級数展開を持つとする．項別微分ができる
-\footnote{
-実際は，\(\displaystyle f(x)=\sum_{n=0}^\infty a_nx^n\)の収束半径を\(r\)としたとき，各項を微分したべき級数\(\displaystyle g(x)=\sum_{n=1}^\infty na_nx^{n-1}\)が収束し，かつ\(g(x)=f'(x)\)が成立するのは，\(|x|<r\)のときのみである．
+\footnote{実際は，\(\displaystyle f(x)=\sum_{n=0}^\infty a_nx^n\)の収束半径を\(r\)としたとき，各項を微分したべき級数\(\displaystyle g(x)=\sum_{n=1}^\infty na_nx^{n-1}\)が収束し，かつ\(g(x)=f'(x)\)が成立するのは，\(|x|<r\)のときのみである．
 }
 と仮定すれば
 \begin{equation*}
@@ -835,8 +828,7 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \end{equation*}
 が成り立つことである．
 \end{cor}
-このように，\(f\)の滑らかさは\(\{c[n]\}\)の\(n\to\infty\)での減少の仕方と密接に関係している．すなわち，\(f\)が滑らかなほど\(c[n]\)は\(n\to\infty\)で速く減少する．また，この逆も成り立つことが知られている\footnote{しかし，定量的にぴったり評価することは難しい．}．実用上用いられる滑らかな関数のほとんどは解析的\footnote{
-関数\(f(x)\)が解析的であるとは，各点の近傍におけるテイラー展開が元の関数に収束することを言う．
+このように，\(f\)の滑らかさは\(\{c[n]\}\)の\(n\to\infty\)での減少の仕方と密接に関係している．すなわち，\(f\)が滑らかなほど\(c[n]\)は\(n\to\infty\)で速く減少する．また，この逆も成り立つことが知られている\footnote{しかし，定量的にぴったり評価することは難しい．}．実用上用いられる滑らかな関数のほとんどは解析的\footnote{関数\(f(x)\)が解析的であるとは，各点の近傍におけるテイラー展開が元の関数に収束することを言う．
 }である．解析的な関数については，次のようなさらに強い結果が成り立つ．
 \begin{theorem}\upshape{\bf{(ペイリー・ウィナーの定理)}}
 \label{th2-5}
@@ -1014,7 +1006,7 @@ b[n]&=&\frac{1}{R}\int_0^{2R}f(x)\sin\left(\frac{\pi n}{R}x\right)\mathrm{d}x \\
 b[n]&=&\frac{2}{R}\int_0^R f(x)\sin n\omega x\mathrm{d}x,\ (n\geq 1) \\
 u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R], t\geq 0)
 \end{eqnarray*}
-とおけば，\(u(x, t)\)は\([0, R]\times[0, \infty)\)で連続，\((0, R)\times(0, \infty)\)で無限回微分可能であり，\eqref{eq2-4}を満たす．さらに，\(u\)は\([0, R]\times[0, \infty)\)で連続，\((0, R)\times(0, \infty)\)で\upshape{2}回連続的微分可能な唯一の\eqref{eq2-4}の解である．
+とおけば，\(u(x, t)\)は\([0, R]\times[0, \infty)\)で連続，\((0, R)\times(0, \infty)\)で無限回微分可能であり，\eqref{eq2-4}を満たす．さらに，\(u\)は\([0, R]\times[0, \infty)\)で連続，\((0, R)\times(0, \infty)\)で2回連続的微分可能な唯一の\eqref{eq2-4}の解である．
 \end{theorem}
 \begin{proof}
 最初に，\(t>0, 0<x<R\)で\(u(x, t)\)が\eqref{eq2-4}を満たすことを確かめる．任意の\(M\)について，定数\(C_M>0\)が存在して
@@ -1209,7 +1201,13 @@ D_N(t)&=&\frac{1}{T}\sum_{n=-N}^N e^{in\omega t} \\
 \begin{equation*}
     S_N(t)=D_N*f(t)
 \end{equation*}
-と書くことができる．
+と書くことができる(図\ref{fig2-8})．
+\begin{figure}
+    \centering
+    \includegraphics[angle=-90, width=\linewidth]{A3-2.eps}
+    \caption{ディリクレ核．但し，\(T=2\pi\)として計算した．}
+    \label{fig2-8}
+\end{figure}
 \end{example}
 \begin{example} \upshape{\bf{(フェイエル和)}}
 \label{ex2-8}
@@ -1234,5 +1232,201 @@ F_N(t)&=&\frac{1}{TN}\sum_{n=0}^{N-1}\frac{2(\cos(n+1)\omega t-\cos n\omega t)}{
 \end{eqnarray*}
 を得る．
 \end{example}
-
+フェイエル核は，以下のような性質を持つ．
+\begin{lemma}
+\label{lem2-13}
+\begin{enumerate}
+    \renewcommand{\labelenumi}{(\roman{enumi})}
+    \item \(\forall N\in\mathbb{N}, \forall t\in\mathbb{R}\)に対して，\(F_N(t)\geq 0\)
+    \item \(\forall N\in\mathbb{N}\)に対して
+    \begin{equation*}
+        \int_0^T F_N(t)\mathrm{d}t=1
+    \end{equation*} 
+    \item \(\forall\delta>0\)に対して，\(N\to\infty\)のとき\([\delta, T-\delta]\)上で\(F_N(t)\)は0に一様収束する．つまり，任意の\(\delta, \varepsilon>0\)に対して，\(N\)を十分大きくすれば，\(F_N(t)<\varepsilon(t\in[\delta, T-\delta])\)が成り立つ．
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i)は，上の計算から得られた\(F_N(t)\)の表現から明らか．(ii)を示す．\(F_N\)の定義より，
+\begin{equation*}
+    \int_0^T F_N(t)\mathrm{d}t=\sum_{n=-N}^N\frac{N-|n|}{N}\frac{1}{T}\int_0^T e^{in\omega t}\mathrm{d}t=\frac{1}{T}\int_0^T \mathrm{d}t=1
+\end{equation*}
+が成り立つ．ここで，\(n\neq 0\)ならば\(\displaystyle\int_0^T e^{in\omega t}\mathrm{d}t=0\)であることを用いた．以上より，(ii)が示された．(iii)を示す．もし\(t\in[\delta, T-\delta]\)ならば，\(\displaystyle\left|\sin\frac{\omega t}{2}\right|\geq\sin\frac{\omega\delta}{2}>0\)であるから
+\begin{equation*}
+    |F_N(t)|\leq\frac{1}{TN}\left(\frac{1}{\sin\frac{\omega\delta}{2}}\right)^2=(\mbox{定数})\times\frac{1}{N}
+\end{equation*}
+が成り立つ．右辺は\(N\to\infty\)のとき0に収束するから，(iii)が従う．
+\end{proof}
+この補題の意味するところは，\(\displaystyle \left[-\frac{T}{2}, \frac{T}{2}\right]\)で考えると，\(F_N(t)\)は0の近くでのみ大きくなり，それ以外では0に収束するということである\footnote{\(F_N(t)\)がディラックのデルタ関数に収束するという言い方もできる．}．このような関数による畳み込みについては，次のような定理が成り立つ．
+\begin{theorem}
+\label{th2-14}
+\(g_N(t)\)を，周期\(T\)の連続な周期関数で，次の条件を満たすものとする．
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\arabic{enumi})}
+    \item ある定数\(M>0\)が存在して，任意の\(N\in\mathbb{N}\)について
+    \begin{equation*}
+        \int_0^T g_N(t)\mathrm{d}t=1,\ \int_0^T |g_N(t)|\mathrm{d}t\leq M
+    \end{equation*}
+    \item 任意の\(\delta>0\)に対して，
+    \begin{equation*}
+        \lim_{N\to\infty}\int_\delta^{T-\delta}|g_N(t)|\mathrm{d}t=0
+    \end{equation*}
+\end{enumerate}
+このとき，\(f\)が連続な周期関数ならば，\(N\to\infty\)で\(g_N*f\)は\(f\)に一様収束する．
+\end{theorem}
+\begin{proof}
+\(f_N:=g_N*f\)とおく．条件1)より
+\begin{eqnarray*}
+f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
+&=&\int_0^T g_N(s)(f(t)-f(t-s))\mathrm{d}s
+\end{eqnarray*}
+と書ける．ここで，\(f\)は連続だから，
+\begin{equation*}
+    \forall\varepsilon>0,\ \exists\delta>0\ \mathrm{s.t.}\ |t-s|<\delta\Rightarrow|f(t)-f(s)|<\frac{\varepsilon}{2M}
+\end{equation*}
+が成立する．ここで，
+\begin{equation*}
+    I(t)=\int_{-\delta}^\delta|g_N(s)||f(t)-f(t-s)|\mathrm{d}s,\ II(t)=\int_\delta^{T-\delta}|g_N(s)||f(t)-f(t-s)|\mathrm{d}s
+\end{equation*}
+とおくと
+\begin{equation*}
+    I(t)\leq\frac{\varepsilon}{2M}\int_{-\delta}^\delta|g_N(s)|\mathrm{d}s\leq\frac{\varepsilon}{2}
+\end{equation*}
+\begin{equation*}
+    II(t)\leq 2\sup_s f(s)\int_\delta^{T-\delta}|g_N(s)|\mathrm{d}s
+\end{equation*}
+である．ここで，仮定2)より，\(\displaystyle \forall\varepsilon>0,\ \exists N_0\in\mathbb{N}\ \mathrm{s.t.}\ N\geq N_0\Rightarrow II(t)<\frac{\varepsilon}{2}\)となる．従って，
+\begin{equation*}
+    |f(t)-f_N(t)|\leq I(t)+II(t)<\varepsilon
+\end{equation*}
+が成り立つ．\(\varepsilon>0\)は任意だったから，これは\(f_N\)が\(f\)に一様収束することを意味する．
+\end{proof}
+補題\ref{lem2-13}と定理\ref{th2-14}から，定理\ref{th1-14}は導かれる．ここで，ディリクレ核\(D_N(t)\)は定理\ref{th2-14}の条件を満たさない．それは，\(N\)がいくら大きくなっても，図\ref{fig2-8}からも見て取れるように振動が小さくならないからである．重み関数\(G(s)\)が与えられたとき，対応する周期関数\(g_N(t)\)が定理\ref{th2-14}の条件を満たすかどうかは，\(G\)の滑らかさによって決まる．これについては，ハン窓の議論とともに，後で論じる．
+\section{離散フーリエ変換と差分方程式} \label{sec2-6}
+ここまでは，フーリエ級数展開を「周期関数を数列で表現して解析する道具」として議論してきた．しかし，逆にフーリエ級数展開を「数列を周期関数で表現して解析する道具」と考えることもできる．つまり，数列\(c=\{c[n]\}_{n=-\infty}^\infty\)が与えられたとき
+\begin{equation*}
+    f(t)=\mathcal{F}^* c(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t} (t\in\mathbb{R})
+\end{equation*}
+とおいて
+\begin{equation*}
+    c[n]=\mathcal{F}f[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t (n\in\mathbb{Z})
+\end{equation*}
+により「数列の積分表示」が与えられている，と考えるのである
+\footnote{周期\(T\)はこの場合は任意に選んでよく，\(T=1, 2\pi\)とするのが数学的には見やすい．しかし，実用上は\(T, \omega\)は意味のある定数として自然に決まる場合が多いので，このまま議論を進める．
+}．このような議論をするとき，\(l^1(\mathbb{Z})\)に含まれるような数列に対して
+\footnote{もっと一般に，\(\displaystyle\sum |c[n]|^2<\infty\)を満たす数列の空間(\(l^2(\mathbb{Z})\)とも書ける)からの写像と考えると，\(\mathcal{F}^* c\)は平均収束する．しかし，その極限は普通の意味で積分可能な関数になるとは限らない．つまり，\(f=\mathcal{F}^* c\)はルベーグ積分可能な関数になり，\(\displaystyle\int|f(t)|^2\mathrm{d}t<\infty\)を満たす．この議論にはルベーグ積分の理論が必須なので，ここでは省略する．
+}
+，周期関数を対応させる写像\(\mathcal{F}^*\)を\textcolor{red}{離散フーリエ変換}と呼ぶ\footnote{本講義で「有限フーリエ変換」と呼んだものを離散フーリエ変換と呼ぶことも，特に信号処理の教科書では多い．}．\\
+　離散フーリエ変換の一つの応用として，ここでは差分方程式の解法を考えてみよう．\(\{\alpha_{-m}, \alpha_{-m+1}, \dots, \alpha_0, \alpha_1, \dots, \alpha_m\}\subset\mathbb{C}\)を定数の列とする．このとき，数列\(a=\{a[n]\}, b=\{b[n]\}\)に関する方程式
+\begin{equation}
+    (Aa)[n]\equiv\sum_{j=-m}^m \alpha_ja[n-j]=b[n] (n\in\mathbb{Z}) \label{eq2-18}
+\end{equation}
+を考える．このような形の方程式を\textcolor{red}{差分方程式}と呼ぶ\footnote{高校までの数学では漸化式と呼ばれていたものである．}．差分方程式は，離散的なシステムにおいて，連続なシステムにおける微分方程式と同様の役割を果たし，色々な問題で現れる．\eqref{eq2-18}の両辺を(形式的に)離散フーリエ変換すると
+\begin{eqnarray*}
+\mathcal{F}^* Aa(t)&=&\sum_{j=-m}^m \alpha_j\mathbb{F}^*(a[n-j])(t) \\
+&=&\left(\sum_{j=-m}^m \alpha_je^{ij\omega t}\right)(\mathcal{F}^* a)(t)=(\mathcal{F}^* b)(t)
+\end{eqnarray*}
+となる．つまり，\(\displaystyle\Tilde{A}(t):=\sum_{j=-m}^m \alpha_je^{ij\omega t}\)とおけば，差分方程式は
+\begin{equation*}
+    \Tilde{A}(t)(\mathcal{F}^* a)(t)=(\mathcal{F}^* b)(t) (t\in\mathbb{R})
+\end{equation*}
+という方程式に書き換えられる．\(a, b\in l^1(\mathbb{Z})\)と仮定すれば，これは確かに\eqref{eq2-18}と同値な方程式である．実は，\(\alpha=\{\alpha_j\}\subset l^1(\mathbb{Z})\)とみなせば\(\Tilde{A}=T\mathcal{F}^*\alpha\)だから，これは定理\ref{th2-11}の特別な場合である．\\
+　もし，条件
+\begin{equation}
+    \Tilde{A}(t)\neq 0 (t\in\mathbb{R}) \label{eq2-19}
+\end{equation}
+が満たされれば，\(\Tilde{A}(t)\)は連続な関数なので\(\inf|\Tilde{A}(t)|>0\)であり，\(\displaystyle\frac{1}{\Tilde{A}(t)}\)は有界連続関数である．さらに，\(\Tilde{A}(t)\)は三角多項式で解析的だから，\(\displaystyle\frac{1}{\Tilde{A}(t)}\)も解析的かつ滑らかである．\(b\in l^1(\mathbb{Z})\)が与えられたとして，\eqref{eq2-18}を\(a\in l^1(\mathbb{Z})\)について解いてみると，解は
+\begin{equation*}
+    (\mathcal{F}^* a)(t)=\frac{(\mathcal{F}^* b)(t)}{\Tilde{A}(t)}
+\end{equation*}
+となる．両辺に\(\mathcal{F}\)を作用させて定理\ref{th2-11}をまた用いれば
+\begin{equation*}
+    a=\mathcal{F}\left(\frac{\mathcal{F}^* b}{\Tilde{A}}\right)=\mathcal{F}\left(\frac{1}{\Tilde{A}}\right)*b
+\end{equation*}
+が分かる．\(\displaystyle\frac{1}{\Tilde{A}}\)は滑らかなので，\(\displaystyle\mathcal{F}\left(\frac{1}{\Tilde{A}}\right)\in l^1(\mathbb{Z})\)である(補題\ref{lem1-11}，または定理\ref{th2-2})．以上の議論から，次の結論が得られた．
+\begin{theorem}
+\label{th2-15}
+上の記号の下で，条件\eqref{eq2-19}が満たされていると仮定する．このとき，任意の\(b\in l^1(\mathbb{Z})\)に対して，差分方程式\eqref{eq2-18}の解\(a\in l^1(\mathbb{Z})\)がただ一つ存在し
+\begin{equation}
+    a=g*b,\ g=\mathcal{F}\left(\frac{1}{\Tilde{A}}\right)\in l^1(\mathbb{Z}) \label{eq2-20}
+\end{equation}
+で与えられる．
+\end{theorem}
+\begin{rem}
+\label{rem2-1}
+\(\alpha_{-m}, \alpha_m\neq 0\)であれば，\eqref{eq2-18}の解は\(2m\)次元の線形空間を成す．これは，任意の初期条件\(a[0], a[1], \dots, a[2m-1]\)を与えて，\eqref{eq2-18}を漸化式として，\(n\)について(正の方向と負の方向に)順次解いていくことによって分かる．定理\ref{th2-15}の主張は，これらの解のうちで，\(l^1(\mathbb{Z})\)に入るものが一つだけ見つかる，ということである．
+\end{rem}
+\section{離散時間信号処理とフィルター} \label{sec2-7}
+離散フーリエ変換が極めて重要な役割を果たす応用分野として，\textcolor{red}{ディジタル(離散時間)信号処理}が挙げられる．ここでは，離散フーリエ変換がこの分野でどのように用いられるかを，フィルターを例に眺めてみる．\\
+　数列\(c=\{c[n]\}_{n=-\infty}^\infty\)は，離散的な時間ごとにサンプル(測定)された量と考えて，\textcolor{red}{離散時間信号}と呼ばれる
+\footnote{ディジタル信号と呼ばれることも多いが，これは正確ではない．厳密には，\(\{c[n]\}\)の値の集合も離散的にした場合にディジタル信号と呼ばれる．この場合は，線形代数で直接扱うことができないので，議論は煩雑になる．そのため，本講義では扱わない．
+}
+．離散時間信号\(c\)に対して，離散時間信号\(A(c)\)を対応させる写像\(A\)は，次の性質を満たすとき\textcolor{red}{フィルター}と呼ばれる\footnote{正確には，\textcolor{red}{線形フィルター}と呼ぶべきだろう．非線形のフィルターを考える場合もある．線形フィルターをlinear filterと呼ぶのに対して，非線形フィルターをnonfilterと呼ぶ流儀もある．}．
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\arabic{enumi})}
+    \item \(A\)は線形写像である．つまり，\(c, d\)が離散時間信号，\(\alpha, \beta\in\mathbb{C}\)のとき
+    \begin{equation*}
+        A(\alpha c+\beta d)=\alpha A(c)+\beta A(d)
+    \end{equation*}
+    が成り立つ．
+    \item \(A\)は\textcolor{red}{時不変}である．つまり，\(V\)を平行移動させる作用素
+    \begin{equation*}
+        (Vc)[n]=c[n-1] (n\in\mathbb{Z})
+    \end{equation*}
+    とするとき，任意の離散時間信号\(c\)について
+    \begin{equation*}
+        A(Vc)=V(A(c))
+    \end{equation*}
+    が成り立つ．
+\end{enumerate}
+\(A\)がフィルターのとき，\(A\)は線形写像なので，行列と同じように\(A(c)=Ac\)と書くことにする．フィルター\(A\)の\textcolor{red}{インパルス・レスポンス}\(\{h[n]\}\)は
+\begin{equation*}
+    h[n]=(A\delta)[n] (n\in\mathbb{Z})
+\end{equation*}
+で与えられる．但し，\(\delta[n]:=\delta_{n0}\)はクロネッカーのデルタである．以下では，\(\{h[n]\}\)が有界数列である場合だけを考えよう．すると，任意の\(c\in l^1(\mathbb{Z})\)に対して(形式的には)
+\begin{eqnarray*}
+(Ac)[n]&=&A\left(\sum_{n=-\infty}^\infty c[m]V^m\delta\right)[n] \\
+&=&\sum_m c[m](AV^m\delta)[n]=\sum_m c[m](V^mA\delta)[n] \\
+&=&\sum_m c[m]h[n-m]=(h*c)[n]
+\end{eqnarray*}
+が従う\footnote{簡単に示せる次の公式:
+\begin{equation*}
+    c[n]=\sum_m c[m]\delta[n-m]=\sum_m c[m](V^m\delta)[n]
+\end{equation*}
+を用いた．
+}．つまり，\(A\)はインパルス・レスポンス\(h\)だけで決定し
+\begin{equation*}
+    Ac=h*c
+\end{equation*}
+と書ける
+\footnote{この計算は，注意したように形式的である．無限和と\(A\)を交換するためには，\(A\)に何らかの「連続性」を仮定する必要がある．実際には，\(Ac=h*c\)で\(A\)が定義されていると考えるのが自然な場合が多い．そうすると，\(A\)の性質，特に連続性はインパルス・レスポンス\(\{h[n]\}\)の性質から導かれる．
+}．\\
+　\(n<0\)に対して\(h[n]=0\)のとき，\(A\)は\textcolor{red}{因果的}であると呼ばれる．また，有限個の\(n\)を除いて\(h[n]=0\)であるとき，\(A\)は\textcolor{red}{FIRフィルター}と呼ばれ，そうでないときは，\textcolor{red}{IIRフィルター}と呼ばれる．実際に用いられるフィルターの多くはFIRフィルターであるか，IIRフィルターでも\(n\to\infty\)で\(h[n]\)が指数的に減少するような因果的なフィルターである．\\
+　\(c\)を離散時間信号とするとき，離散フーリエ変換\(\mathcal{F}^* c\)は\(c\)の\textcolor{red}{スペクトル}と呼ばれ，\((\mathcal{F}^* c)(t)\)の変数\(t\)は周波数とみなされる．\(\mathcal{F}^* c\)は周期関数だから，離散時間信号の周波数領域は，区間\(\displaystyle\left[-\frac{T}{2}, \frac{T}{2}\right]\)であると考えるのが自然である．そうすると，\((\mathcal{F}^* c)(t)\)あるいは，その絶対値\(|(\mathcal{F}^* c)(t)|\)は\(c\)の周波数の分布を表している．\(|(\mathcal{F}^* c)(t)|\)は\textcolor{red}{スペクトル振幅}と呼ばれる．さて，上の公式と定理\ref{th2-11}によれば
+\begin{equation*}
+    \mathcal{F}^*(Ac)(t)=\mathcal{F}^*(h*c)(t)=(\mathcal{F}^* h)(t)\cdot(\mathcal{F}^* c)(t)
+\end{equation*}
+である．つまり，フィルター\(A\)は，離散フーリエ変換によって，周波数領域での掛け算作用素に書き換えられる．\((F^* h)(t)\)(またはその絶対値\(|(F^* h)(t)|\))は\(A\)の\textcolor{red}{周波数特性}と呼ばれ，フィルターを特徴づける基本的な量である．実際，フィルターは求める周波数特性に合わせて設計される場合が多い．
+\begin{example} \upshape{\bf{(ローパス・フィルター)}} \label{ex2-10}
+\(T:=2\pi\)とする．\(0<\alpha<\pi\)として，
+\begin{equation*}
+    (F^* h_\alpha)(t)=
+    \begin{cases}
+    1 & (-\alpha<t<\alpha) \\
+    0 & (-\pi<t<-\alpha\mbox{または}\alpha<t<\pi)
+    \end{cases}
+\end{equation*}
+であるようなフィルター\(A_\alpha\)を\textcolor{red}{理想ローパス・フィルター}と呼ぶ．\(A_\alpha\)のインパルス・レスポンスは，
+\begin{equation*}
+    h_\alpha[n]=\mathcal{F}(\mathcal{F}^* h_\alpha)[n]=\frac{1}{2\pi}\int_{-\alpha}^\alpha e^{int}\mathrm{d}t=
+    \begin{cases}
+    \frac{1}{\pi}\frac{\sin n\alpha}{n} & (n\neq 0) \\
+    \frac{\alpha}{\pi} & (n=0)
+    \end{cases}
+\end{equation*}
+である．これを用いて，理想ローパス・フィルター\(A_\alpha\)は
+\begin{equation*}
+    (A_\alpha c)[n]=\frac{1}{\pi}\sum_{m=-N}^N \frac{\sin m\alpha}{m}c[n-m]
+\end{equation*}
+と書くことができる．但し，\(m=0\)のときは\(\displaystyle\frac{\sin \alpha 0}{0}=\alpha\)と考えた．
+\end{example}
 \end{document}
