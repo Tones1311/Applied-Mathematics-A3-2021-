@@ -57,9 +57,9 @@
 \section{導入: 周期関数のフーリエ級数展開} \label{sec1-1}
 \(\mathbb{R}\)上の関数\(f(t)(t\in\mathbb{R})\)に対して，\(f\)が周期\(T\)の周期関数であるとは，
 \begin{equation*}
-    \forall t\in\mathbb{R}, f(t+T)=f(t)
+    \forall t\in\mathbb{R},\quad f(t+T)=f(t)
 \end{equation*}
-となることを言う．このとき，\(\forall n\in\mathbb{Z}, f(t+nT)=f(t)(t\in\mathbb{R})\)も成立する．\\
+となることを言う．このとき，\(\forall n\in\mathbb{Z},\quad f(t+nT)=f(t)(t\in\mathbb{R})\)も成立する．\\
 　広いクラスの，周期\(T\)の周期関数に対して，\(f\)の\textcolor{red}{フーリエ級数展開}は
 \begin{equation}
     f(t)=c+\sum_{n=1}^\infty a[n]\cos n\omega t+\sum_{n=1}^\infty b[n]\sin n\omega t \label{eq1-1}
@@ -126,21 +126,21 @@
 \end{equation}
 ならば，
 \begin{eqnarray}
-a[n]&=&\frac{2}{T}\int_0^T f(t)\cos n\omega t\mathrm{d}t (n=0, 1, 2, \dots) \\
-b[n]&=&\frac{2}{T}\int_0^T f(t)\sin n\omega t\mathrm{d}t (n=1, 2, \dots)
+a[n]&=&\frac{2}{T}\int_0^T f(t)\cos n\omega t\mathrm{d}t\quad (n=0, 1, 2, \dots) \\
+b[n]&=&\frac{2}{T}\int_0^T f(t)\sin n\omega t\mathrm{d}t\quad (n=1, 2, \dots)
 \end{eqnarray}
 である．
 \end{formula}
 周期性により，
 \begin{eqnarray}
-a[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\cos n\omega t\mathrm{d}t (n=0, 1, 2, \dots) \\
-b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}t (n=1, 2, \dots)
+a[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\cos n\omega t\mathrm{d}t\quad (n=0, 1, 2, \dots) \\
+b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}t\quad (n=1, 2, \dots)
 \end{eqnarray}
-が成立する．\(f\)が偶関数ならば，\(b[n]=0(n=1, 2, \ldots)\)であり，
+が成立する．\(f\)が偶関数ならば，\(b[n]=0\ (n=1, 2, \ldots)\)であり，
 \begin{equation*}
     f(t)=\frac{a[0]}{2}+\sum_{n=1}^\infty a[n]\cos n\omega t
 \end{equation*}
-となる．これを\textcolor{red}{余弦フーリエ級数展開}という．また，\(f\)が奇関数ならば，\(a[n]=0(n=0, 1, 2, \ldots)\)であり，
+となる．これを\textcolor{red}{余弦フーリエ級数展開}という．また，\(f\)が奇関数ならば，\(a[n]=0\ (n=0, 1, 2, \ldots)\)であり，
 \begin{equation*}
     f(t)=\frac{a[0]}{2}+\sum_{n=1}^\infty b[n]\sin n\omega t
 \end{equation*}
@@ -168,7 +168,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \end{equation}
 が定義できる．公式1.2or直接計算することにより
 \begin{equation*}
-    c[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t (n\in\mathbb{Z})
+    c[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t\quad (n\in\mathbb{Z})
 \end{equation*}
 が得られる．
 \section{いくつかの実例} \label{sec1-4}
@@ -226,7 +226,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 前節の例から想像されるように，広いクラスの周期関数\(f(t)\)に対してフーリエ級数展開が定義されるが，奇妙な例を考えると，連続でありながらフーリエ級数が収束しない点を持つ場合がある．このような，フーリエ級数の収束の問題は，数学的には興味深い問題だが，ここでは深入りせず，一つだけ定理を紹介するにとどめる．\\
 　\(\mathbb{R}\)上の関数\(f(t)\)が\textcolor{red}{リプシッツ連続}であるとは
 \begin{equation*}
-    \exists C>0 \ \mathrm{s.t.} \ \forall t, s\in\mathbb{R} \ |f(t)-f(s)|\leq C|t-s|
+    \exists C>0\ \mathrm{s.t.} \ \forall t, s\in\mathbb{R}, \ |f(t)-f(s)|\leq C|t-s|
 \end{equation*}
 となることをいう．
 \begin{theorem}
@@ -236,22 +236,22 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 この定理を証明することが本章の目標となる．
 \section{有限フーリエ級数} \label{sec1-6}
 フーリエ級数の理論の美しい点の一つは，幾何学的な構造を持つことである．すなわち，フーリエ級数展開とは，「関数のなす線形空間」のベクトルの，基底による直交分解であると考えることができる．この考え方を完全に述べるには関数解析の理論(ヒルベルト空間論)の知識が必要となるため，ここでは述べない．以下では主要なアイデアのみ述べる．\\
-　最初に線形代数の復習をしておこう．\(X=\mathbb{C}^N\)を\(N\)次元複素線形空間とする．また，その元を\(u=(u[0], \cdots, u[N-1])\in X\)とする．\(u, v\in X\)のエルミート内積は
+　最初に線形代数の復習をしておこう．\(X=\mathbb{C}^N\)を\(N\)次元複素線形空間とする．また，その元を\(u=(u[0], \dots, u[N-1])\in X\)とする．\(u, v\in X\)のエルミート内積は
 \begin{equation*}
     \langle u, v\rangle=\sum_{n=0}^{N-1} u[n]\overline{v[n]}
 \end{equation*}
-で定義される．また，\(|u|=\sqrt{\langle u, u\rangle}\)は\(u\in X\)の長さである．\(u_0, \cdots, u_{M-1}\in X\)が正規直交系であるとは
+で定義される．また，\(|u|=\sqrt{\langle u, u\rangle}\)は\(u\in X\)の長さである．\(u_0, \dots, u_{M-1}\in X\)が正規直交系であるとは
 \begin{equation*}
-    \langle u_n, u_m\rangle=\delta_{nm} (n, m=0, \dots, M-1)
+    \langle u_n, u_m\rangle=\delta_{nm}\quad (n, m=0, \dots, M-1)
 \end{equation*}
 となることをいう．\(N=M\)のときこれらは正規直交基底と呼ばれ，
 \begin{equation*}
     \forall u\in X, u=\sum_{n=0}^{N-1}\langle u, u_n\rangle u_n
 \end{equation*}
-が成立する．ここで，\(\langle u, u_n\rangle\)を座標成分という．\(\mathbb{C}^N\)の標準的な基底\(\bm{e}_n[k]=\delta_{kn}(n, k=0, \dots, N-1)\)は正規直交基底となる．\\
+が成立する．ここで，\(\langle u, u_n\rangle\)を座標成分という．\(\mathbb{C}^N\)の標準的な基底\(\bm{e}_n[k]=\delta_{kn}\ (n, k=0, \dots, N-1)\)は正規直交基底となる．\\
 　\(\displaystyle\alpha=\frac{2\pi}{N}\)として，
 \begin{equation*}
-    \varphi_n[k]=\frac{1}{\sqrt{N}}\exp(i\alpha nk) (n, k=0, \dots, N-1)
+    \varphi_n[k]=\frac{1}{\sqrt{N}}\exp(i\alpha nk)\quad (n, k=0, \dots, N-1)
 \end{equation*}
 を考える．
 \begin{prop}
@@ -272,11 +272,11 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \end{proof}
 \(u\in X\)とする．
 \begin{equation}
-    \hat{u}[n]=\langle u, \varphi_n\rangle=\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}u[k]e^{-i\alpha nk} (n=0, \dots, N-1) \label{eq1-12}
+    \hat{u}[n]=\langle u, \varphi_n\rangle=\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}u[k]e^{-i\alpha nk}\quad (n=0, \dots, N-1) \label{eq1-12}
 \end{equation}
 とおくと，
 \begin{equation}
-    u[k]=\sum_{n=0}^{N-1}\hat{u}[n]\varphi_n[k]=\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}\hat{u}[n]e^{i\alpha nk} (k=0, \dots, N-1) \label{eq1-13}
+    u[k]=\sum_{n=0}^{N-1}\hat{u}[n]\varphi_n[k]=\frac{1}{\sqrt{N}}\sum_{n=0}^{N-1}\hat{u}[n]e^{i\alpha nk}\quad (k=0, \dots, N-1) \label{eq1-13}
 \end{equation}
 と書ける．\eqref{eq1-12}を\textcolor{red}{有限フーリエ変換}，\eqref{eq1-13}を\textcolor{red}{逆有限フーリエ変換}，または\(\hat{u}[n]\)の\textcolor{red}{有限フーリエ級数展開}と呼ぶ．\\
 　有限フーリエ変換，逆有限フーリエ変換はユニタリーな線形変換である．つまり
@@ -306,7 +306,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
     f_N(t)=\sum_{-\frac{N}{2}\leq n<\frac{N}{2}} c_N[n]e^{in\omega t}
 \end{equation*}
 \begin{equation*}
-    c_N[n]=\frac{1}{N}\sum_{m=0}^{N-1}f\left(\frac{m}{N}T\right)e^{-i\alpha nm} (n\in\mathbb{Z})
+    c_N[n]=\frac{1}{N}\sum_{m=0}^{N-1}f\left(\frac{m}{N}T\right)e^{-i\alpha nm}\quad (n\in\mathbb{Z})
 \end{equation*}
 とする．このとき，\(f_N(t)\)は\(f(t)\)に一様収束する．
 \end{theorem}
@@ -324,11 +324,11 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \end{equation*}
 とおく．\(\{d_N[n]\}\)は\(\displaystyle f(t_n)-f\left(t_n-\frac{T}{N}\right)\)の有限フーリエ変換の\(\displaystyle\frac{1}{\sqrt{N}}\)倍である．リプシッツ連続性の仮定より，ある\(L>0\)が存在して
 \begin{equation*}
-    \left|f\left(\frac{m}{N}T\right)-f\left(\frac{m-1}{N}T\right)\right|\leq L\frac{T}{N} (m\in\mathbb{Z})
+    \left|f\left(\frac{m}{N}T\right)-f\left(\frac{m-1}{N}T\right)\right|\leq L\frac{T}{N}\quad (m\in\mathbb{Z})
 \end{equation*}
 となる．\(C:=LT\)とおくと
 \begin{equation*}
-    \left|f\left(\frac{m}{N}T\right)-f\left(\frac{m-1}{N}T\right)\right|\leq \frac{C}{N} (m\in\mathbb{Z})
+    \left|f\left(\frac{m}{N}T\right)-f\left(\frac{m-1}{N}T\right)\right|\leq \frac{C}{N}\quad (m\in\mathbb{Z})
 \end{equation*}
 が成り立つ．従って，有限フーリエ変換の等長性\eqref{eq1-14}より
 \begin{equation*}
@@ -344,7 +344,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \end{equation*}
 となる．従って
 \begin{equation}
-    |\sin\theta|\geq\frac{2}{\pi}|\theta| \left(|\theta|\leq\frac{\pi}{2}\right) \label{eq1-16}
+    |\sin\theta|\geq\frac{2}{\pi}|\theta|\quad \left(|\theta|\leq\frac{\pi}{2}\right) \label{eq1-16}
 \end{equation}
 を用いれば
 \begin{equation*}
@@ -362,7 +362,7 @@ b[n]&=&\frac{2}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t)\sin n\omega t\mathrm{d}
 \begin{eqnarray}
 |f_N'(t)|&\leq&\omega\sqrt{N}\sum_{n}\frac{|n|}{\sqrt{N}}|c_N[n]| \nonumber \\
 &\leq&\omega\sqrt{N}\left(\sum_{n}\left(\frac{1}{\sqrt{N}}\right)^2\right)^{\frac{1}{2}}\left(\sum_{n}|n|^2|c_N[n]|^2\right)^{\frac{1}{2}} \nonumber \\
-&\leq&\sqrt{N}C' (C'\mbox{はある定数}) \label{eq1-17}
+&\leq&\sqrt{N}C'\quad (C'\mbox{はある定数}) \label{eq1-17}
 \end{eqnarray}
 が得られる．ここで，第2の不等式ではシュワルツの不等式: \(|u\cdot v|\leq|u||v|\)を用いた．\\
 　さて，任意の\(t\in[0, T]\)に対して，\(\displaystyle |t-t_k|\leq\frac{T}{2N}\)であるような\(\displaystyle t_k=\frac{k}{N}T\)が存在する．\(f(t_k)=f_N(t_k)\)に注意して
@@ -419,17 +419,17 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 \end{equation}
 が得られた．\\
 　このように，周期的な関数の空間\(X\)は，ユークリッド空間のような内積や長さを持つ線形空間と考えることができる．特に，\(\langle f, g\rangle=0\)のとき，これらは\textcolor{red}{直交する}と呼ばれる．しかし，\(X\)は有限次元ではないため，有限個の元からなる基底を持たない．そこで，座標系を作るには，無限個の元からなる基底を考える必要が出てくる．そのためには，有限次元の場合とは違って，基底による展開の収束を考える必要が生じる．\\
-　さて，関数の集合\(\{f_n\}_{n=1}^\infty=\{f_1, f_2, \cdots\}\subset X\)を考える．\(\{f_n\}\)が\textcolor{red}{正規直交系}であるとは
+　さて，関数の集合\(\{f_n\}_{n=1}^\infty=\{f_1, f_2, \dots\}\subset X\)を考える．\(\{f_n\}\)が\textcolor{red}{正規直交系}であるとは
 \begin{equation*}
-    \langle f_n, f_m\rangle=\delta_{nm} (n, m=1, 2, \dots)
+    \langle f_n, f_m\rangle=\delta_{nm}\quad (n, m=1, 2, \dots)
 \end{equation*}
 が成立することである．\textcolor{red}{フーリエ関数系}を
 \begin{equation*}
-    \varphi_n(t)=e^{in\omega t} (n\in\mathbb{Z}, t\in\mathbb{R})
+    \varphi_n(t)=e^{in\omega t}\quad (n\in\mathbb{Z}, t\in\mathbb{R})
 \end{equation*}
 で定義すると，\(\{\varphi_n\}_{n=-\infty}^\infty\)は正規直交系である．\(f\in X\)に対して，
 \begin{equation*}
-    \langle f, \varphi_n\rangle=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t=c[n] (n\in\mathbb{Z})
+    \langle f, \varphi_n\rangle=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t=c[n]\quad (n\in\mathbb{Z})
 \end{equation*}
 は\(f\)のフーリエ係数である．つまり，フーリエ級数展開
 \begin{equation*}
@@ -441,7 +441,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 \end{equation*}
 とおけば，\(\{\psi_0, \psi_1^{(1)}, \psi_2^{(1)}, \dots, \psi_1^{(2)}, \psi_2^{(2)}, \dots\}\)はやはり正規直交系である(定理\ref{th1-1})．以降も，主に複素フーリエ係数のみを考える．
 \section{正規直交基底とフーリエ級数の平均収束} \label{sec1-9}
-\(\{f_n\}_{n=1}^\infty={f_1, f_2, \cdots}\)を\(X\)の正規直交系とする．\(\{f_n\}\)が\(X\)の\textcolor{red}{正規直交基底}，または\textcolor{red}{完全正規直交系}であるとは，全ての\(f\in X\)について
+\(\{f_n\}_{n=1}^\infty={f_1, f_2, \dots}\)を\(X\)の正規直交系とする．\(\{f_n\}\)が\(X\)の\textcolor{red}{正規直交基底}，または\textcolor{red}{完全正規直交系}であるとは，全ての\(f\in X\)について
 \begin{equation*}
     \lim_{N\to\infty}\left|\left|f-\sum_{n=1}^N\langle f, f_n\rangle f_n\right|\right|=0
 \end{equation*}
@@ -460,7 +460,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 \end{theorem}
 \eqref{eq1-20}は\textcolor{red}{パーセバルの等式}と呼ばれる．この定理が示されれば
 \begin{equation*}
-    \left|\left|f-\sum_{n=-N}^N c[n]\varphi_n\right|\right|\to 0 (N\to\infty)
+    \left|\left|f-\sum_{n=-N}^N c[n]\varphi_n\right|\right|\to 0\quad (N\to\infty)
 \end{equation*}
 という意味で，全ての\(f\in X\)についてフーリエ級数展開が収束することが分かる．これを，フーリエ級数展開の\textcolor{red}{平均収束}(または\(L^2\)-収束)という．平均収束は，各点\(x\in\mathbb{R}\)での収束を意味しないことに注意せよ．平均収束は，定理\ref{th1-6}の一様収束よりは，ずっと弱い収束である．\\
 　さて，\(\{f_n\}_{n=1}^\infty\)を正規直交系，\(f\in X\)とする．このとき
@@ -532,11 +532,11 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 }
 ．すると，定理\ref{th1-5}より，\(N\)を十分大きくとれば
 \begin{equation*}
-    \left|g(t)-\sum_{|n|\leq N}c_N[n]\varphi_n(t)\right|<\frac{\varepsilon}{2} (t\in[0, T])
+    \left|g(t)-\sum_{|n|\leq N}c_N[n]\varphi_n(t)\right|<\frac{\varepsilon}{2}\quad (t\in[0, T])
 \end{equation*}
 が成り立つ．ここで，\(T\)は\(f(t)\)の周期であり，\(\{c_N[n]\}\)は
 \begin{equation*}
-    c_N[n]=\frac{1}{N}\sum_{m=0}^{N-1}g\left(\frac{m}{N}T\right)e^{-2\pi i\frac{m}{N}n} (n\in\mathbb{Z})
+    c_N[n]=\frac{1}{N}\sum_{m=0}^{N-1}g\left(\frac{m}{N}T\right)e^{-2\pi i\frac{m}{N}n}\quad (n\in\mathbb{Z})
 \end{equation*}
 である．これより，
 \begin{equation*}
@@ -565,7 +565,7 @@ f(t)-f_N(t)&=&(f(t)-f(t_k))+(f(t_k)-f_N(t_k))+(f_N(t_k)-f_N(t)) \\
 \begin{proof}
 リプシッツ連続性より，定数\(C>0\)が存在して
 \begin{equation*}
-    |f(t+h)-f(t)|\leq C|h| (t, h\in\mathbb{R})
+    |f(t+h)-f(t)|\leq C|h|\quad (t, h\in\mathbb{R})
 \end{equation*}
 が成り立つ．\(N\leq 1\)に対して，\(\displaystyle h:=\frac{T}{2N}\)とおき，\(f\)の\(h\)だけの差分関数を
 \begin{equation*}
@@ -607,7 +607,7 @@ d[n]&=&\frac{1}{hT}\int_0^T (f(t+h)-f(t))e^{-in\omega t}\mathrm{d}t=\frac{1}{h}(
 \begin{equation*}
     \sum_{n=1}^N |a_nb_n|\leq\left(\sum_{n=1}^N |a_n|^2\right)^\frac{1}{2}\left(\sum_{n=1}^N |b_n|^2\right)^\frac{1}{2}
 \end{equation*}
-を思い出しておこう．\(\displaystyle c[n]=\frac{1}{n}\times nc[n](n\neq 0)\)と考えてシュワルツの不等式を用いると
+を思い出しておこう．\(\displaystyle c[n]=\frac{1}{n}\times nc[n]\ (n\neq 0)\)と考えてシュワルツの不等式を用いると
 \begin{eqnarray*}
 \sum_{1\leq|n|\leq N}|c[n]|&\leq&\left(2\sum_{n=1}^N\frac{1}{n^2}\right)^{\frac{1}{2}}\left(\sum_{1\leq|n|\leq N}|n|^2|c[n]|^2\right)^{\frac{1}{2}} \\
 &\leq&\left(2\sum_{n=1}^\infty\frac{1}{n^2}\right)^{\frac{1}{2}}\left(\sum_{n=-\infty}^\infty|n|^2|c[n]|^2\right)^{\frac{1}{2}}
@@ -691,7 +691,7 @@ f_4(t)&=&\frac{4}{\pi}\sum_{n=0}^\infty\frac{\sin(2n+1)\omega t}{2n+1} \\
 \end{figure}
 図\ref{fig1-6}を見ると，不連続点\(t=0, \pm\pi\)以外では，\(N\)が大きくなると\(S_N(t)\)が\(f_4(t)\)に収束することが分かる．しかし，\(t=0, \pm\pi\)の近くでは\(S_N(t)\)は強く振動し，\(f(t)\)よりも大きく飛び出した点が存在する．\(N\)を大きくしてもこのような点は消えないことが知られており，この現象を\textcolor{red}{ギッブス現象}という．電子工学では，この飛び出しをオーバーシュート，振動をリップル，リンギングなどと呼ぶ．この飛び出し(オーバーシュート)の高さは，\(\Delta t:=\omega t, (2n+1)\Delta t=\pi\)とおくと
 \begin{equation*}
-    \frac{4}{\pi}\sum_{n=0}^N \frac{\sin(2n+1)\Delta t}{(2n+1)\Delta t}\Delta t\to\frac{2}{\pi}\int_0^\pi \frac{\sin t}{t}\mathrm{d}t=1.17898\dots (N\to\infty)
+    \frac{4}{\pi}\sum_{n=0}^N \frac{\sin(2n+1)\Delta t}{(2n+1)\Delta t}\Delta t\to\frac{2}{\pi}\int_0^\pi \frac{\sin t}{t}\mathrm{d}t=1.17898\dots\quad (N\to\infty)
 \end{equation*}
 に収束する．
 \end{example}
@@ -703,7 +703,7 @@ f_4(t)&=&\frac{4}{\pi}\sum_{n=0}^\infty\frac{\sin(2n+1)\omega t}{2n+1} \\
 \begin{equation*}
     S_N^G(t)=\sum_{n=-N}^N G\left(\frac{n}{N}\right)c[n]e^{in\omega t}
 \end{equation*}
-と定義する．\(G(s)\)が上の条件を満たせば，各nにおいて\(\displaystyle G\left(\frac{n}{N}\right)\to 1(N\to\infty)\)なので，(形式的には)
+と定義する．\(G(s)\)が上の条件を満たせば，各nにおいて\(\displaystyle G\left(\frac{n}{N}\right)\to 1\ (N\to\infty)\)なので，(形式的には)
 \begin{equation*}
     \lim_{N\to\infty}S_N^G(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t}=f(t)
 \end{equation*}
@@ -776,18 +776,18 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \end{proof}
 この議論は，\(f\)が微分可能である限りは何度でも繰り返すことができる．つまり，もし\(f\)が\(C^m\)級の関数であるならば，定理\ref{th2-1}を\(m\)回繰り返し用いて，\(f^{(m)}\)のフーリエ級数が\(\{(in\omega)^mc[n]\}\)で与えられることが分かる．このとき，\(f^{(m)}\)は有界関数だから
 \begin{equation*}
-    \left|(in\omega)^m c[n]\right|\leq\sup_t |f^{(m)}(t)| (n\in\mathbb{Z})
+    \left|(in\omega)^m c[n]\right|\leq\sup_t |f^{(m)}(t)|\quad (n\in\mathbb{Z})
 \end{equation*}
 が成り立つ．よって，
 \begin{equation*}
-    |c[n]|\leq\left(\omega^{-m}\sup|f^{(m)}|\right)\cdot|n|^{-m} (n\neq 0)
+    |c[n]|\leq\left(\omega^{-m}\sup|f^{(m)}|\right)\cdot|n|^{-m}\quad (n\neq 0)
 \end{equation*}
 が従う．つまり，次の定理が証明された．
 \begin{theorem}
 \label{th2-2}
 \(f\)を\(C^m(m\in\mathbb{N})\)級の周期関数とし，\(\{c[n]\}_{n=-\infty}^\infty\)をそのフーリエ級数とする．このとき，\(k=0, 1, \dots, m\)に対して，\(f\)の\(k\)階微分\(f^{(k)}\)のフーリエ係数は\(\{(in\omega)^k c[n]\}_{n=-\infty}^\infty\)で与えられる．また，定数\(C>0\)が存在して，
 \begin{equation}
-    |c[n]|\leq C(1+|n|)^{-m} (n\in\mathbb{Z}) \label{eq2-1}
+    |c[n]|\leq C(1+|n|)^{-m} (n\in\mathbb{Z})\quad \label{eq2-1}
 \end{equation}
 が成り立つ．
 \end{theorem}
@@ -800,7 +800,7 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \end{equation}
 であるならば，\(f\)は\(C^m\)級関数である．特に，\(a>m+1\)に対して，
 \begin{equation*}
-    \exists C>0,\ \mathrm{s.t.}\ |c[n]|\leq C\left(1+|n|\right)^{-a} (n\in\mathbb{Z})
+    \exists C>0,\ \mathrm{s.t.}\ |c[n]|\leq C\left(1+|n|\right)^{-a}\quad (n\in\mathbb{Z})
 \end{equation*}
 が成り立つならば，\(f\)は\(C^m\)級関数である．
 \end{theorem}
@@ -834,14 +834,14 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \label{th2-5}
 \(f\)を解析的な周期関数とする．このとき，
 \begin{equation}
-    \exists C>0,\ \exists \varepsilon>0,\ \mathrm{s.t.}\ |c[n]|\leq Ce^{-\varepsilon|n|} (n\in\mathbb{Z}) \label{eq2-3}
+    \exists C>0,\ \exists \varepsilon>0,\ \mathrm{s.t.}\ |c[n]|\leq Ce^{-\varepsilon|n|}\quad (n\in\mathbb{Z}) \label{eq2-3}
 \end{equation}
 が成り立つ．逆に，\eqref{eq2-3}が成り立てば，\(f\)は解析的である．
 \end{theorem}
 証明は省略する．例えば，谷島賢二『物理数学入門』(東京大学出版会)を参照せよ．\\
 　さて，ここからは定数係数の線形常微分方程式の周期解について考えよう．\(P\)を
 \begin{equation*}
-    Pf(t)=\sum_{j=0}^m a_j\frac{\mathrm{d}^j f}{\mathrm{d}t^j}(t) (t\in\mathbb{R})
+    Pf(t)=\sum_{j=0}^m a_j\frac{\mathrm{d}^j f}{\mathrm{d}t^j}(t)\quad (t\in\mathbb{R})
 \end{equation*}
 で定義される，定数係数の線形常微分作用素とする．ここで，\(a_0, a_1, \dots, a_m\in\mathbb{C}\)は定数である．周期\(T\)の関数\(f\)に関する方程式
 \begin{equation*}
@@ -849,7 +849,7 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \end{equation*}
 を考えよう．ここで，\(g(t)\)は与えられた周期関数とする．\(f\)が\(m\)階微分可能と仮定する．\(f, g\)のフーリエ係数をそれぞれ\(\{c[n]\}, \{d[n]\}\)とすると，定理\ref{th2-2}から
 \begin{equation*}
-    \sum_{j=0}^m a_j(in\omega)^j c[n]=d[n] (n\in\mathbb{Z})
+    \sum_{j=0}^m a_j(in\omega)^j c[n]=d[n]\quad (n\in\mathbb{Z})
 \end{equation*}
 を満たす．これは，各\(n\)について独立な方程式だから，\(\{d[n]\}\)から\(\{c[n]\}\)が求まるはずである．ここでは，一般論には深入りせず
 \begin{equation*}
@@ -857,7 +857,7 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \end{equation*}
 の場合について，少し詳しく調べてみよう．この場合は，上の方程式は
 \begin{equation*}
-    (-n^2\omega^2+\lambda)c[n]=d[n] (n\in\mathbb{Z})
+    (-n^2\omega^2+\lambda)c[n]=d[n]\quad (n\in\mathbb{Z})
 \end{equation*}
 となる．まず，\(\lambda\notin\{n^2\omega^2|n\in\mathbb{Z}\}\)のときを考える．このとき，
 \begin{equation*}
@@ -868,9 +868,9 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
     \sum_{n=-\infty}^\infty n^2|c[n]|=\sum_{n=-\infty}^\infty\left|\frac{n^2}{\lambda-n^2\omega^2}\right||d[n]|\leq C\sum_{n=-\infty}^\infty |d[n]|<\infty
 \end{equation*}
 となる．定理\ref{th2-3}より，\(\displaystyle f=\sum c[n]e^{in\omega t}\)は\(C^2\)級関数であって，項別微分可能であり，唯一の周期解となる．特に，\(Pf=0\)を満たす周期解は\(f=0\)のみである．\\
-　次に，\(\lambda=n_0^2\omega^2(n_0\in\mathbb{Z})\)のときを考える．このとき，\(Pf=g\)が解を持つためには，\(d[n_0]=0\)が必要である．これが成り立っているとき，\(n\neq n_0\)については，上の場合と同様に，\(d[n]\)から\(c[n]\)が導ける．\(c[n_0]\)はどのように選んでも方程式は満たされる．すなわち，
+　次に，\(\lambda=n_0^2\omega^2\ (n_0\in\mathbb{Z})\)のときを考える．このとき，\(Pf=g\)が解を持つためには，\(d[n_0]=0\)が必要である．これが成り立っているとき，\(n\neq n_0\)については，上の場合と同様に，\(d[n]\)から\(c[n]\)が導ける．\(c[n_0]\)はどのように選んでも方程式は満たされる．すなわち，
 \begin{equation*}
-    f(t)=\sum_{n\neq n_0}\frac{d[n]}{\lambda-n^2\omega^2}e^{in\omega t}+Ae^{in_0\omega t}(A\mbox{は任意定数})
+    f(t)=\sum_{n\neq n_0}\frac{d[n]}{\lambda-n^2\omega^2}e^{in\omega t}+Ae^{in_0\omega t}\quad (A\mbox{は任意定数})
 \end{equation*}
 が(形式的な)解である．\(g\)がリプシッツ連続ならば\(f\)が\(C^2\)級であり，方程式の解であることは，先ほどと同様に確かめられる．\\
 　さて，上の方程式で\(g=0\)とおいて，\(\lambda\)を任意定数と考えると，\(Pf=0\)は，固有値問題
@@ -961,15 +961,15 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \end{equation*}
 が満たされていなければならない．よって，\(2\sqrt{a}R\in -2\pi i(\mathbb{Z}\verb|\|\{0\})\)，すなわち，
 \begin{equation*}
-    a=-\left(\frac{\pi n}{R}\right)^2 (n\in\mathbb{Z}\verb|\|\{0\})
+    a=-\left(\frac{\pi n}{R}\right)^2\quad (n\in\mathbb{Z}\verb|\|\{0\})
 \end{equation*}
 の形で表される．\(a<0\)のときも全く同様にして
 \begin{equation*}
-    a=\left(\frac{\pi n}{R}\right)^2 (n\in\mathbb{Z}\verb|\|\{0\})
+    a=\left(\frac{\pi n}{R}\right)^2\quad (n\in\mathbb{Z}\verb|\|\{0\})
 \end{equation*}
 の形で表される．\(a=0\)のときの解は，境界条件を満たさない．以降は
 \begin{equation*}
-    a=-\left(\frac{\pi n}{R}\right)^2 (n\in\mathbb{Z}\verb|\|\{0\})
+    a=-\left(\frac{\pi n}{R}\right)^2\quad (n\in\mathbb{Z}\verb|\|\{0\})
 \end{equation*}
 のときを考える．すると，\(\beta=-\alpha\)より
 \begin{equation*}
@@ -990,8 +990,8 @@ d[n]&=&\frac{1}{T}\int_0^T f'(t)e^{-in\omega t}\mathrm{d}t \\
 \end{equation*}
 である．ちょうどこれは，正弦フーリエ級数展開の形をしている．これが初期条件\(f(x)\)と等しくなるように，数列\(\{b[n]\}\)を選ぶ必要がある．そこで
 \begin{eqnarray*}
-f(-x)&=&-f(x),\ (0\leq x\leq R) \\
-f(x+2mR)&=&f(x),\ (-R\leq x\leq R, m\in\mathbb{Z})
+f(-x)&=&-f(x)\quad (0\leq x\leq R) \\
+f(x+2mR)&=&f(x)\quad (-R\leq x\leq R, m\in\mathbb{Z})
 \end{eqnarray*}
 とおいて，\(f\)を周期\(2R\)の周期関数に拡張する．\(f\)が連続で，両立条件\eqref{eq2-5}を満たすならば，拡張された\(f\)も連続である．また，この\(f\)は奇関数だから
 \begin{eqnarray*}
@@ -1003,15 +1003,15 @@ b[n]&=&\frac{1}{R}\int_0^{2R}f(x)\sin\left(\frac{\pi n}{R}x\right)\mathrm{d}x \\
 \label{th2-6}
 \(f\)を\([0, R]\)上のリプシッツ連続な関数で，両立条件\eqref{eq2-5}を満たすと仮定する．このとき，\(\displaystyle\omega:=\frac{\pi}{R}\)として
 \begin{eqnarray*}
-b[n]&=&\frac{2}{R}\int_0^R f(x)\sin n\omega x\mathrm{d}x,\ (n\geq 1) \\
-u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R], t\geq 0)
+b[n]&=&\frac{2}{R}\int_0^R f(x)\sin n\omega x\mathrm{d}x\quad (n\geq 1) \\
+u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t}\quad (x\in[0, R], t\geq 0)
 \end{eqnarray*}
 とおけば，\(u(x, t)\)は\([0, R]\times[0, \infty)\)で連続，\((0, R)\times(0, \infty)\)で無限回微分可能であり，\eqref{eq2-4}を満たす．さらに，\(u\)は\([0, R]\times[0, \infty)\)で連続，\((0, R)\times(0, \infty)\)で2回連続的微分可能な唯一の\eqref{eq2-4}の解である．
 \end{theorem}
 \begin{proof}
 最初に，\(t>0, 0<x<R\)で\(u(x, t)\)が\eqref{eq2-4}を満たすことを確かめる．任意の\(M\)について，定数\(C_M>0\)が存在して
 \begin{equation*}
-    e^{-s}\leq C_M(1+s)^{-M} (s\geq 0)
+    e^{-s}\leq C_M(1+s)^{-M}\quad (s\geq 0)
 \end{equation*}
 となるから，ある定数\(C>0\)によって
 \begin{equation}
@@ -1019,7 +1019,7 @@ u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R],
 \end{equation}
 が成り立つ．従って，系\ref{cor2-4}より\(t>0\)なら\(u(x, t)\)は\(x\)について\(C^\infty\)級である．また，任意の自然数\(K\)に対して，定数\(C_K>0\)が存在して
 \begin{equation*}
-    \left|(n^2\omega^2)^K b[n]e^{-n^2\omega^2 t}\sin n\omega x\right|\leq C_K(1+n^2\omega^2 t)^{-2} (n\in\mathbb{Z})
+    \left|(n^2\omega^2)^K b[n]e^{-n^2\omega^2 t}\sin n\omega x\right|\leq C_K(1+n^2\omega^2 t)^{-2}\quad (n\in\mathbb{Z})
 \end{equation*}
 となる．よって
 \begin{equation*}
@@ -1054,7 +1054,7 @@ u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R],
 \label{lem2-7}
 \(w(x, t)\)が\(x\)について\(C^2\)級，\(t\)について\(C^1\)級で，熱方程式の初期境界値問題\eqref{eq2-4}を満たすならば
 \begin{equation}
-    \int_0^R w(x, t)^2\mathrm{d}x\leq\int_0^R f(x)^2\mathrm{d}x (t>0) \label{eq2-8}
+    \int_0^R w(x, t)^2\mathrm{d}x\leq\int_0^R f(x)^2\mathrm{d}x\quad (t>0) \label{eq2-8}
 \end{equation}
 が成立する．
 \end{lemma}
@@ -1062,9 +1062,9 @@ u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R],
 左辺を\(t\)について偏微分すると
 \begin{eqnarray*}
 \frac{\partial}{\partial t}\int_0^R w(x, t)^2\mathrm{d}x&=&2\int_0^R\left(\frac{\partial}{\partial t}w(x, t)\right)w(x, t)\mathrm{d}x \\
-&=&2\int_0^R\left(\frac{\partial^2}{\partial x^2}w(x, t)\right)w(x, t)\mathrm{d}x (\because w\mbox{は熱方程式を満たす}) \\
+&=&2\int_0^R\left(\frac{\partial^2}{\partial x^2}w(x, t)\right)w(x, t)\mathrm{d}x\ (\because w\mbox{は熱方程式を満たす}) \\
 &=&2\left(\left[\frac{\partial w}{\partial x}(x, t)\right]_0^R-\int_0^R\left|\frac{\partial w}{\partial x}(x, t)\right|^2\mathrm{d}x\right) \\
-&=&-2\int_0^R\left|\frac{\partial w}{\partial x}(x, t)\right|^2\mathrm{d}x (\because\mbox{境界条件})
+&=&-2\int_0^R\left|\frac{\partial w}{\partial x}(x, t)\right|^2\mathrm{d}x\ (\because\mbox{境界条件})
 \end{eqnarray*}
 となる．よって
 \begin{equation*}
@@ -1081,11 +1081,11 @@ u(x, t)&=&\sum_{n=1}^\infty b[n]\sin(n\omega x)e^{-\omega^2 n^2t},\ (x\in[0, R],
 \section{積のフーリエ級数展開と畳み込み} \label{sec2-4}
 まず，次のような記号を定義する．\(f\)が周期\(T\)の周期関数のとき，\(f\)のフーリエ係数を
 \begin{equation*}
-    (\mathcal{F}f)[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t (n\in\mathbb{Z})
+    (\mathcal{F}f)[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t\quad (n\in\mathbb{Z})
 \end{equation*}
 と書く．すなわち，\(\mathcal{F}\)は周期関数の空間\(X\)から数列の集合への，フーリエ係数を対応させる線形写像(作用素)である．逆に，\(\{c[n]\}_{n=-\infty}^\infty\)が数列であるとき，
 \begin{equation*}
-    (\mathcal{F}^* c)(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t} (t\in\mathbb{R})
+    (\mathcal{F}^* c)(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t}\quad (t\in\mathbb{R})
 \end{equation*}
 と書く．\(\mathcal{F}^* c\)は，もちろん一般に収束するとは限らないが
 \begin{equation}
@@ -1112,7 +1112,7 @@ f(t)g(t)&=&\sum_{m=-\infty}^\infty\sum_{k=-\infty}^\infty c[m]d[k-m]e^{ik\omega 
 \end{eqnarray*}
 と書きなおせる．つまり，\(f(t)g(t)\)のフーリエ係数は
 \begin{equation}
-    p[n]=\sum_{m=-\infty}^\infty c[m]d[n-m] (n\in\mathbb{Z}) \label{eq2-16}
+    p[n]=\sum_{m=-\infty}^\infty c[m]d[n-m]\quad (n\in\mathbb{Z}) \label{eq2-16}
 \end{equation}
 で与えられる．\(p\in l^1(\mathbb{Z})\)であることは
 \begin{eqnarray*}
@@ -1141,7 +1141,7 @@ f(t)g(t)&=&\sum_{m=-\infty}^\infty\sum_{k=-\infty}^\infty c[m]d[k-m]e^{ik\omega 
 \end{eqnarray*}
 である．ここで，積分の順序が交換可能であること(フビニの定理)と\(g\)の周期性を用いた．これより，\(\mathcal{F}f\cdot\mathcal{F}g\)は\(\displaystyle\frac{1}{T}\int_0^T f(s)g(t-s)\mathrm{d}s\)のフーリエ係数であることが分かった．数列の場合と同じように，周期\(T\)の周期関数\(f, g\)に対して
 \begin{equation*}
-    f*g(t)=\int_0^T f(s)g(t-s)\mathrm{d}s (t\in\mathbb{R})
+    f*g(t)=\int_0^T f(s)g(t-s)\mathrm{d}s\quad (t\in\mathbb{R})
 \end{equation*}
 と定義し，\(f*g\)を\(f\)と\(g\)の\textcolor{red}{畳み込み}と呼ぶ．数列の場合と同様に
 \begin{equation*}
@@ -1160,11 +1160,11 @@ f(t)g(t)&=&\sum_{m=-\infty}^\infty\sum_{k=-\infty}^\infty c[m]d[k-m]e^{ik\omega 
 \footnote{ルベーグ積分の理論を用いれば，この仮定は，「\(f, g\)は可測で，\(\displaystyle\int|f|^2\mathrm{d}t<\infty, \int|g|^2\mathrm{d}t<\infty\)」で十分なことが分かる．可測空間の間の関数が可測であるとは，各可測集合に対して，その原像が可測であることを言う．応用の場面で現れる実数値関数は，可測関数であることが多い．可測空間(\(\sigma\)-加法族)とは，簡単に言えば，測度を定義できるための十分な性質を備えた集合族である．詳しくは，ルベーグ積分論の教科書を参照せよ．}
 ．このとき，
 \begin{equation*}
-    (\mathcal{F}f)[n]\cdot(\mathcal{F}g)[n]=\frac{1}{T}\mathcal{F}(f*g)[n] (n\in\mathbb{Z})
+    (\mathcal{F}f)[n]\cdot(\mathcal{F}g)[n]=\frac{1}{T}\mathcal{F}(f*g)[n]\quad (n\in\mathbb{Z})
 \end{equation*}
 が成り立つ．また，\(c, d\in l^1(\mathbb{Z})\)ならば
 \begin{equation*}
-    \mathcal{F}^*(cd)(t)=\frac{1}{T}(\mathcal{F}^* c)*(\mathcal{F}^* d)(t) (t\in\mathbb{R})
+    \mathcal{F}^*(cd)(t)=\frac{1}{T}(\mathcal{F}^* c)*(\mathcal{F}^* d)(t)\quad (t\in\mathbb{R})
 \end{equation*}
 が成り立つ．
 \end{theorem}
@@ -1242,7 +1242,7 @@ F_N(t)&=&\frac{1}{TN}\sum_{n=0}^{N-1}\frac{2(\cos(n+1)\omega t-\cos n\omega t)}{
     \begin{equation*}
         \int_0^T F_N(t)\mathrm{d}t=1
     \end{equation*} 
-    \item \(\forall\delta>0\)に対して，\(N\to\infty\)のとき\([\delta, T-\delta]\)上で\(F_N(t)\)は0に一様収束する．つまり，任意の\(\delta, \varepsilon>0\)に対して，\(N\)を十分大きくすれば，\(F_N(t)<\varepsilon(t\in[\delta, T-\delta])\)が成り立つ．
+    \item \(\forall\delta>0\)に対して，\(N\to\infty\)のとき\([\delta, T-\delta]\)上で\(F_N(t)\)は0に一様収束する．つまり，任意の\(\delta, \varepsilon>0\)に対して，\(N\)を十分大きくすれば，\(F_N(t)<\varepsilon\ (t\in[\delta, T-\delta])\)が成り立つ．
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1304,11 +1304,11 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
 \section{離散フーリエ変換と差分方程式} \label{sec2-6}
 ここまでは，フーリエ級数展開を「周期関数を数列で表現して解析する道具」として議論してきた．しかし，逆にフーリエ級数展開を「数列を周期関数で表現して解析する道具」と考えることもできる．つまり，数列\(c=\{c[n]\}_{n=-\infty}^\infty\)が与えられたとき
 \begin{equation*}
-    f(t)=\mathcal{F}^* c(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t} (t\in\mathbb{R})
+    f(t)=\mathcal{F}^* c(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t}\quad (t\in\mathbb{R})
 \end{equation*}
 とおいて
 \begin{equation*}
-    c[n]=\mathcal{F}f[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t (n\in\mathbb{Z})
+    c[n]=\mathcal{F}f[n]=\frac{1}{T}\int_0^T f(t)e^{-in\omega t}\mathrm{d}t\quad (n\in\mathbb{Z})
 \end{equation*}
 により「数列の積分表示」が与えられている，と考えるのである
 \footnote{周期\(T\)はこの場合は任意に選んでよく，\(T=1, 2\pi\)とするのが数学的には見やすい．しかし，実用上は\(T, \omega\)は意味のある定数として自然に決まる場合が多いので，このまま議論を進める．
@@ -1318,7 +1318,7 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
 ，周期関数を対応させる写像\(\mathcal{F}^*\)を\textcolor{red}{離散フーリエ変換}と呼ぶ\footnote{本講義で「有限フーリエ変換」と呼んだものを離散フーリエ変換と呼ぶことも，特に信号処理の教科書では多い．}．\\
 　離散フーリエ変換の一つの応用として，ここでは差分方程式の解法を考えてみよう．\(\{\alpha_{-m}, \alpha_{-m+1}, \dots, \alpha_0, \alpha_1, \dots, \alpha_m\}\subset\mathbb{C}\)を定数の列とする．このとき，数列\(a=\{a[n]\}, b=\{b[n]\}\)に関する方程式
 \begin{equation}
-    (Aa)[n]\equiv\sum_{j=-m}^m \alpha_ja[n-j]=b[n] (n\in\mathbb{Z}) \label{eq2-18}
+    (Aa)[n]\equiv\sum_{j=-m}^m \alpha_ja[n-j]=b[n]\quad (n\in\mathbb{Z}) \label{eq2-18}
 \end{equation}
 を考える．このような形の方程式を\textcolor{red}{差分方程式}と呼ぶ\footnote{高校までの数学では漸化式と呼ばれていたものである．}．差分方程式は，離散的なシステムにおいて，連続なシステムにおける微分方程式と同様の役割を果たし，色々な問題で現れる．\eqref{eq2-18}の両辺を(形式的に)離散フーリエ変換すると
 \begin{eqnarray*}
@@ -1327,12 +1327,12 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
 \end{eqnarray*}
 となる．つまり，\(\displaystyle\Tilde{A}(t):=\sum_{j=-m}^m \alpha_je^{ij\omega t}\)とおけば，差分方程式は
 \begin{equation*}
-    \Tilde{A}(t)(\mathcal{F}^* a)(t)=(\mathcal{F}^* b)(t) (t\in\mathbb{R})
+    \Tilde{A}(t)(\mathcal{F}^* a)(t)=(\mathcal{F}^* b)(t)\quad (t\in\mathbb{R})
 \end{equation*}
 という方程式に書き換えられる．\(a, b\in l^1(\mathbb{Z})\)と仮定すれば，これは確かに\eqref{eq2-18}と同値な方程式である．実は，\(\alpha=\{\alpha_j\}\subset l^1(\mathbb{Z})\)とみなせば\(\Tilde{A}=T\mathcal{F}^*\alpha\)だから，これは定理\ref{th2-11}の特別な場合である．\\
 　もし，条件
 \begin{equation}
-    \Tilde{A}(t)\neq 0 (t\in\mathbb{R}) \label{eq2-19}
+    \Tilde{A}(t)\neq 0\quad (t\in\mathbb{R}) \label{eq2-19}
 \end{equation}
 が満たされれば，\(\Tilde{A}(t)\)は連続な関数なので\(\inf|\Tilde{A}(t)|>0\)であり，\(\displaystyle\frac{1}{\Tilde{A}(t)}\)は有界連続関数である．さらに，\(\Tilde{A}(t)\)は三角多項式で解析的だから，\(\displaystyle\frac{1}{\Tilde{A}(t)}\)も解析的かつ滑らかである．\(b\in l^1(\mathbb{Z})\)が与えられたとして，\eqref{eq2-18}を\(a\in l^1(\mathbb{Z})\)について解いてみると，解は
 \begin{equation*}
@@ -1380,7 +1380,7 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
 \end{enumerate}
 \(A\)がフィルターのとき，\(A\)は線形写像なので，行列と同じように\(A(c)=Ac\)と書くことにする．フィルター\(A\)の\textcolor{red}{インパルス・レスポンス}\(\{h[n]\}\)は
 \begin{equation*}
-    h[n]=(A\delta)[n] (n\in\mathbb{Z})
+    h[n]=(A\delta)[n]\quad (n\in\mathbb{Z})
 \end{equation*}
 で与えられる．但し，\(\delta[n]:=\delta_{n0}\)はクロネッカーのデルタである．以下では，\(\{h[n]\}\)が有界数列である場合だけを考えよう．すると，任意の\(c\in l^1(\mathbb{Z})\)に対して(形式的には)
 \begin{eqnarray*}
@@ -1428,5 +1428,204 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
     (A_\alpha c)[n]=\frac{1}{\pi}\sum_{m=-N}^N \frac{\sin m\alpha}{m}c[n-m]
 \end{equation*}
 と書くことができる．但し，\(m=0\)のときは\(\displaystyle\frac{\sin \alpha 0}{0}=\alpha\)と考えた．
+\end{example}
+\chapter{1変数のフーリエ変換} \label{chap3}
+\section{導入} \label{sec3-1}
+ここまでで学んだフーリエ級数は，周期\(T\)の周期関数\(f(t)\)を
+\begin{equation*}
+    f(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t},\ \omega=\frac{2\pi}{T}
+\end{equation*}
+の形で展開するものであった．つまり，周期関数は「単振動」\(e^{in\omega t}\)の重ね合わせとして書くことができる．では，もし\(f(t)\)が\(\mathbb{R}\)上の関数で，周期が分からない，あるいはそもそも周期関数ではない場合に，同じように\(f\)を単振動\(e^{i\xi t}\)の重ね合わせで書けるのだろうか．「波数」\(\xi\)は\(\xi=n\omega\)の形に限定されなくなるから，\(\mathbb{R}\)全体を動かなければならない．つまり，
+\begin{equation*}
+    f(t)\sim\sum_{\xi\in\mathbb{R}}c[\xi]e^{i\xi t}
+\end{equation*}
+の形に書くことになる．連続な変数に関して和をとることは(通常は)できないから，この試みはうまく行かない．そこで，無限和を積分で置き換えて
+\begin{equation*}
+    f(t)=\int_{-\infty}^\infty g(\xi)e^{i\xi t}\mathrm{d}\xi
+\end{equation*}
+の形に表現することを考える．これがフーリエ変換のアイデアである．注意すべきことは，フーリエ変換はフーリエ級数展開の単純な拡張ではないことである．和を積分に置き換えたことによって，実はフーリエ変換が可能な関数の集合は，フーリエ級数展開が可能な関数の集合とは違ったものになる．例えば，周期関数そのものはフーリエ変換することはできない\footnote{実は，「超関数」というものを導入すれば，周期関数のフーリエ変換を考えることもできる．興味があれば，「数理解析」(4回生配当)を履修してみると良い．}．大まかに言えば，フーリエ変換が可能な関数は，\(t\to\pm\infty\)で十分早く0に収束するようなものである．\\
+　以下この節では，\(f\)を有界な台を持つ\(\mathbb{R}\)上のリプシッツ連続な関数として，フーリエ級数展開の極限としてフーリエ変換を(形式的に)導入する．\(T:=2N\pi\)とする．\(N\)を十分大きくとって，\(f\)の台が\([-N\pi, N\pi]\)に含まれるようにする．\(f(t)\)のフーリエ級数展開を考えると
+\begin{equation*}
+    f(t)=\sum_{n=-\infty}^\infty c[n]e^{in\omega t},\ c[n]=\frac{1}{2\pi N}\int_{-N\pi}^{N\pi}f(t)e^{-in\omega t}\mathrm{d}t
+\end{equation*}
+と書くことができる．但し，\(\displaystyle\omega=\frac{2\pi}{T}=\frac{1}{N}\)であり，\(t\in[-N\pi, N\pi]\)においてこの式は成り立つ．そこで，\(\xi\in\mathbb{R}\)に対して
+\begin{equation*}
+    \hat{f}(\xi)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(t)e^{-i\xi t}\mathrm{d}t
+\end{equation*}
+と書くことにすれば，上のフーリエ級数展開は
+\begin{equation*}
+    f(t)=\frac{1}{\sqrt{2\pi}}\cdot\frac{1}{N}\sum_{n=-\infty}^\infty\hat{f}\left(\frac{n}{N}\right)e^{i\frac{n}{N}t}\quad (t\in[-N\pi, N\pi])
+\end{equation*}
+と書き換えられる．一旦細かいことを無視して\(N\to\infty\)とすれば，右辺の無限和は\(\mathbb{R}\)上の積分になる．つまり，\(\displaystyle\frac{n}{N}=\xi\)と考えて
+\begin{equation*}
+    f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\hat{f}(\xi)e^{i\xi t}\mathrm{d}\xi
+\end{equation*}
+が導かれる．これが，\(f\)の「フーリエ変換」である．\\
+　以上の議論は\(f\)の台が有界の場合であり，また収束については細かいことを無視した，形式的な計算であった．これを一般化，正当化し，その性質について学ぶのが本章の目的である．
+\section{フーリエ変換の定義} \label{sec3-2}
+まず，フーリエ変換を定義するために，次のような用語を導入しよう．
+\begin{definition}
+\label{def3-1}
+\(f:\mathbb{R}\to\mathbb{C}\)とし，任意の有限区間上で広義積分が存在するようなものとする(例えば，有限個の点を除いて連続な有界関数は条件を満たす)．このとき，\(f\)が\textcolor{red}{可積分}であるとは，
+\begin{equation*}
+    \int_{-\infty}^\infty |f(t)|\mathrm{d}t=\lim_{R\to\infty}\int_{-R}^R |f(t)|\mathrm{d}t<\infty
+\end{equation*}
+を満たすこととする．\(f\)が可積分であることを，\(L^1\)-条件を満たすとも言い，\(f\in L^1(\mathbb{R})\)と書くこともある\footnote{厳密に言えば，上の条件を満たす関数全体の集合が\(L^1(\mathbb{R})\)というわけではない．\(L^1(\mathbb{R})\)はルベーグ積分の意味で可測であり，\(\displaystyle\int|f(t)|\mathrm{d}t<\infty\)を満たす関数全体の集合である．}．
+\end{definition}
+\begin{definition}
+\label{def3-2}
+\(f\)が可積分な\(\mathbb{R}\)上の関数のとき，
+\begin{eqnarray*}
+\Hat{f}(\xi)&=&(\mathcal{F}f)(\xi)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(t)e^{-it\xi}\mathrm{d}t\quad (\xi\in\mathbb{R}) \\
+\check{f}(t)&=&(\mathcal{F}^* f)(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty f(\xi)e^{it\xi}\mathrm{d}\xi\quad (t\in\mathbb{R})
+\end{eqnarray*}
+と定義する．\(\hat{f}=\mathcal{F}f\)は\(f\)の\textcolor{red}{フーリエ変換}，\(\check{f}=\mathcal{F}^* f\)は\(f\)の\textcolor{red}{逆フーリエ変換}と呼ばれる．
+\end{definition}
+前節で説明したように，\(\mathcal{F}^*\mathcal{F}f(t)=f(t)\)であることを示したい．\(\mathcal{F}\)と\(\mathcal{F}^*\)は，互いに複素共役なので，これが示されれば，\(\mathcal{F}\mathcal{F}^* f(\xi)=f(\xi)\)も従う．つまり，\(\mathcal{F}^*\)は\(\mathcal{F}\)の逆写像であり，\(\mathcal{F}^*=\mathcal{F}^{-1}\)となるはずである．これらの公式は，フーリエ変換の\textcolor{red}{反転公式}と呼ばれる．\\
+　次の命題は，定義より容易に導かれる．証明は省略する．
+\begin{prop}
+\label{prop3-1}
+\begin{enumerate}
+    \renewcommand{\labelenumi}{(\roman{enumi})}
+    \item \(\mathcal{F}, \mathcal{F}^*\)は線形写像である．つまり，\(f, g\)を可積分関数，\(\alpha, \beta\in\mathbb{C}\)とすると
+    \begin{equation*}
+        \mathcal{F}[\alpha f+\beta g](\xi)=\alpha\hat{f}(\xi)+\beta\hat{g}(\xi)
+    \end{equation*}
+    \begin{equation*}
+        \mathcal{F}^*[\alpha f+\beta g](t)=\alpha\check{f}(t)+\beta\check{g}(t)
+    \end{equation*}
+    が成り立つ\footnote{ここでは，関数\(f\)のフーリエ変換を\(\mathcal{F}f=\mathcal{F}[f]\)と書いた．関数と変数との混同を避けるために，以下も同様の表記を用いることがある．}．
+    \item \(\Tilde{f}(t)=f(-t)\)とおくと，\((\mathcal{F}\Tilde{f})(\xi)=\hat{f}(-\xi)=\overline{(\mathcal{F}\overline{f})(\xi)}\)である．特に，\(f\)が実数値偶(奇)関数ならば，\(\hat{f}\)も実数(純虚数)値偶(奇)関数である．\(\mathcal{F}^*\)についても同様の性質が成り立つ．
+\end{enumerate}
+\end{prop}
+また，定義から直ちに分かるように，\(f\)が可積分関数ならば
+\begin{equation*}
+    \left|\hat{f}(\xi)\right|\leq\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty |f(t)|\mathrm{d}t<\infty\quad (\xi\in\mathbb{R})
+\end{equation*}
+だから，\(\hat{f}\)は有界な関数である．実はさらに，\(\hat{f}\)は連続関数であることが分かる．
+\begin{prop}
+\label{prop3-2}
+\(f\in L^1(\mathbb{R})\)ならば，\(\hat{f}, \check{f}\)は有界な(一様)連続関数である．
+\end{prop}
+\begin{proof}
+\(\hat{f}\)が有界なことは上で示したので，連続であることだけ示せばよい．\(\varepsilon>0\)を任意の小さな数とする．\(R>0\)を十分大きく選んで
+\begin{equation*}
+    \frac{1}{\sqrt{2\pi}}\int_{|t|\geq R}|f(t)|\mathrm{d}t<\frac{\varepsilon}{3}
+\end{equation*}
+となるようにする．一方，全ての\(\xi, \eta\in\mathbb{R}\)について
+\begin{equation*}
+    \left|e^{-it\xi}-e^{-it\eta}\right|=\left|\int_\eta^\xi (-it)e^{-its}\mathrm{d}s\right|\leq|t|\cdot|\xi-\eta|
+\end{equation*}
+が成り立つ．この式を\(-R\)から\(R\)まで積分して
+\begin{align*}
+&\left|\frac{1}{\sqrt{2\pi}}\int_{-R}^R f(t)e^{-it\xi}\mathrm{d}t-\frac{1}{\sqrt{2\pi}}\int_{-R}^R f(t)e^{-it\eta}\mathrm{d}t\right| \\
+&\leq\frac{1}{\sqrt{2\pi}}\int_{-R}^R\left|e^{-it\xi}-e^{-it\eta}\right||f(t)|\mathrm{d}t\leq\frac{R}{\sqrt{2\pi}}|\xi-\eta|\int_{-R}^R|f(t)|\mathrm{d}t
+\end{align*}
+が得られる．そこで
+\begin{equation*}
+    |\xi-\eta|\leq\delta:=\frac{\varepsilon}{3}\left(\frac{R}{\sqrt{2\pi}}\int_{-R}^R|f(t)|\mathrm{d}t\right)^{-1}
+\end{equation*}
+と仮定すれば，
+\begin{eqnarray*}
+\left|\hat{f}(\xi)-\hat{f}(\eta)\right|&\leq&\left|\frac{1}{\sqrt{2\pi}}\int_{|t|\geq R}f(t)e^{-it\xi}\mathrm{d}t\right|+\left|\frac{1}{\sqrt{2\pi}}\int_{|t|\geq R}f(t)e^{-it\eta}\mathrm{d}t\right| \\
+&\ &+\left|\frac{1}{\sqrt{2\pi}}\int_{-R}^R f(t)e^{-it\xi}\mathrm{d}t-\frac{1}{\sqrt{2\pi}}\int_{-R}^R f(t)e^{-it\eta}\mathrm{d}t\right| \\
+&\leq&3\times\frac{\varepsilon}{3}=\varepsilon
+\end{eqnarray*}
+が成り立つ．\(\varepsilon>0\)は任意定数だったから，これは\(\hat{f}\)は(一様に)連続であることを意味している．\(\check{f}\)についても全く同様にして示される．
+\end{proof}
+\section{基本的な例} \label{sec3-3}
+\begin{example}
+\label{ex3-1}
+\(f_1(t)=e^{-\alpha t}(\alpha>0)\)を考える．\(\xi\in\mathbb{R}\)として
+\begin{equation*}
+    \hat{f_1}(\xi)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\alpha|t|}e^{-it\xi}\mathrm{d}t=\frac{1}{\sqrt{2\pi}}\frac{2\alpha}{\alpha^2+\xi^2}
+\end{equation*}
+である．同様に，複素共役をとることにより
+\begin{equation*}
+    \check{f_1}(t)=\overline{\hat{f_1}(t)}=\frac{1}{\sqrt{2\pi}}\frac{2\alpha}{\alpha^2+t^2}\quad (t\in\mathbb{R})
+\end{equation*}
+も得られる．
+\end{example}
+\begin{example}
+\label{ex3-2}
+\(\displaystyle f_2(t)=\frac{1}{\alpha^2+t^2}\ (\alpha>0)\)を考える．すると，定義より
+\begin{equation*}
+    \hat{f_2}(\xi)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\frac{e^{-it\xi}}{\alpha^2+t^2}\mathrm{d}t
+\end{equation*}
+である．この積分は留数定理を用いて計算することができる．\(\xi>0, \xi<0\)で場合分けして計算すると
+\begin{equation*}
+    \hat{f_2}(\xi)=\frac{\sqrt{2\pi}}{2\alpha}e^{-\alpha|\xi|}\quad(\xi\in\mathbb{R})
+\end{equation*}
+となる．複素共役を取って
+\begin{equation*}
+    \check{f_2}(t)=\frac{\sqrt{2\pi}}{2\alpha}e^{-\alpha|t|}\quad(t\in\mathbb{R})
+\end{equation*}
+も従う．
+\end{example}
+例\ref{ex3-1}，\ref{ex3-2}より
+\begin{equation*}
+    \hat{f_1}(\xi)=\frac{2\alpha}{\sqrt{2\pi}}f_2(\xi),\quad \check{f_2}(t)=\frac{\sqrt{2\pi}}{2\alpha}f_1(t)
+\end{equation*}
+である．よって，
+\begin{equation*}
+    \mathcal{F}^*\mathcal{F}f_1(t)=f_1(t),\quad \mathcal{F}\mathcal{F}^* f_2(\xi)=f_2(\xi)
+\end{equation*}
+が従う．同様に
+\begin{equation*}
+    \mathcal{F}\mathcal{F}^* f_1(\xi)=f_1(\xi),\quad \mathcal{F}^*\mathcal{F}f_2(t)=f_2(t)
+\end{equation*}
+も分かる．つまり，\(f_1, f_2\)に関しては，反転公式が確かに成り立っている．
+\begin{example} \upshape{\bf{(ガウス関数)}}
+\(\displaystyle f_3(t)=e^{-\frac{\lambda^2 t^2}{2}}\ (\lambda>0)\)を考える．すると
+\begin{equation*}
+    -\frac{\lambda^2 t^2}{2}-it\xi=-\frac{\lambda^2}{2}\left(t+\frac{i\xi}{\lambda^2}\right)-\frac{\xi^2}{2\lambda^2}
+\end{equation*}
+なので
+\begin{eqnarray*}
+\hat{f_3}(\xi)&=&\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\frac{\lambda^2 t^2}{2}}e^{-it\xi}\mathrm{d}t \\
+&=&\frac{1}{\sqrt{2\pi}}e^{-\frac{\xi^2}{2\lambda^2}}\int_{-\infty}^\infty e^{-\frac{\lambda^2}{2}\left(t+\frac{i\xi}{\lambda^2}\right)^2}\mathrm{d}t
+\end{eqnarray*}
+となる．ここで，積分\(\displaystyle\int_{-R}^R e^{-\frac{\lambda^2}{2}\left(t+\frac{i\xi}{\lambda^2}\right)^2}\mathrm{d}t\)を考えると，変数変換によりこの積分は
+\begin{eqnarray*}
+\int_{-R}^R e^{-\frac{\lambda^2}{2}\left(t+\frac{i\xi}{\lambda^2}\right)^2}\mathrm{d}t&=&\int_{-R+\frac{i\xi}{\lambda^2}}^{R+\frac{i\xi}{\lambda^2}}e^{-\frac{\lambda^2 t^2}{2}}\mathrm{d}t \\
+&=&\int_{-R+\frac{i\xi}{\lambda^2}}^{-R}e^{-\frac{\lambda^2 t^2}{2}}\mathrm{d}t+\int_{-R}^R e^{-\frac{\lambda^2 t^2}{2}}\mathrm{d}t+\int_R^{R+\frac{i\xi}{\lambda^2}}e^{-\frac{\lambda^2 t^2}{2}}\mathrm{d}t
+\end{eqnarray*}
+と変形され，\(R\to\infty\)とすると
+\begin{equation*}
+    \int_{-\infty}^\infty e^{-\frac{\lambda^2 t^2}{2}}\mathrm{d}t=\frac{1}{\lambda}\int_{-\infty}^\infty e^{-\frac{s^2}{2}}\mathrm{d}s=\frac{\sqrt{2\pi}}{\lambda}
+\end{equation*}
+となる．ここで，最後の積分がガウス積分であることを用いた．従って
+\begin{equation*}
+    \hat{f_3}(\xi)=\frac{1}{\lambda}e^{-\frac{\xi^2}{2\lambda^2}},\quad \check{f_3}(t)=\frac{1}{\lambda}e^{-\frac{t^2}{2\lambda^2}}
+\end{equation*}
+が得られる．\(\lambda\)を\(\displaystyle\frac{1}{\lambda}\)に置き換えると
+\begin{equation*}
+    \mathcal{F}^*\left[e^{-\frac{\xi^2}{2\lambda^2}}\right](t)=\lambda e^{-\frac{\lambda^2 t^2}{2}},\quad \mathcal{F}\left[e^{-\frac{t^2}{2\lambda^2}}\right](\xi)=\lambda e^{-\frac{\lambda^2\xi^2}{2}}
+\end{equation*}
+が得られるから，\(f_3\)についても反転公式が成り立っていることが容易に確かめられる．
+\end{example}
+\begin{example}
+区間\(I=[-a, a]\)の定義関数
+\begin{equation*}
+    f_4(t)=
+    \begin{cases}
+    1 & (t\in[-a, a]) \\
+    0 & (t\notin[-a, a])
+    \end{cases}
+\end{equation*}
+を考えてみよう．すると
+\begin{eqnarray*}
+\hat{f_4}(\xi)&=&\frac{1}{\sqrt{2\pi}}\int_{-a}^a e^{-it\xi}\mathrm{d}t=\frac{1}{\sqrt{2\pi}}\left[\frac{e^{-it\xi}}{-i\xi}\right]_{-a}^a \\
+&=&\frac{1}{\sqrt{2\pi}}\frac{e^{-ia\xi}-e^{ia\xi}}{-i\xi}=\frac{2a}{\sqrt{2\pi}}\frac{\sin a\xi}{a\xi}=\frac{2a}{\sqrt{2\pi}}\mathrm{sinc}(a\xi)
+\end{eqnarray*}
+となる．\(\displaystyle\mathrm{sinc}(t)=\frac{\sin t}{t}\)は，\(\mathrm{sinc}\)関数と呼ばれる．但し，\(\xi=0\)のときは\(\mathrm{sinc}(\xi)=1\)として考える．\(n\geq 0\)のとき
+\begin{equation*}
+    \int_{2n\pi}^{(2n+1)\pi}|\mathrm{sinc}(t)|\mathrm{d}t\geq\frac{1}{2n+1}\int_{2n\pi}^{(2n+1)\pi}|\sin t|\mathrm{d}t=\frac{4}{2n+1}
+\end{equation*}
+である．\(n=-\infty\)から\(\infty\)までの和を取ると
+\begin{equation*}
+    \int_{-\infty}^\infty|\mathrm{sinc}(t)|\mathrm{d}t\geq\sum_{n=-\infty}^\infty\frac{4}{2|n|+1}=\infty
+\end{equation*}
+となる．故に，\(\mathrm{sinc}(t)\notin L^1(\mathbb{R})\)である．つまり，\(\mathrm{sinc}\)関数は可積分関数ではないから，\(\hat{f_4}\)の逆フーリエ変換は直接計算することはできない．従って特に，反転公式は(このままの形では)成立しないことが分かる．
 \end{example}
 \end{document}
