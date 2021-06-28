@@ -1576,6 +1576,7 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
 \end{equation*}
 も分かる．つまり，\(f_1, f_2\)に関しては，反転公式が確かに成り立っている．
 \begin{example} \upshape{\bf{(ガウス関数)}}
+\label{ex3-3}
 \(\displaystyle f_3(t)=e^{-\frac{\lambda^2 t^2}{2}}\ (\lambda>0)\)を考える．すると
 \begin{equation*}
     -\frac{\lambda^2 t^2}{2}-it\xi=-\frac{\lambda^2}{2}\left(t+\frac{i\xi}{\lambda^2}\right)-\frac{\xi^2}{2\lambda^2}
@@ -1605,6 +1606,7 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
 が得られるから，\(f_3\)についても反転公式が成り立っていることが容易に確かめられる．
 \end{example}
 \begin{example}
+\label{ex3-4}
 区間\(I=[-a, a]\)の定義関数
 \begin{equation*}
     f_4(t)=
@@ -1628,4 +1630,150 @@ f(t)-f_N(t)&=&\int_0^T g_N(s)f(t)\mathrm{d}s-\int_0^T g_N(s)f(t-s)\mathrm{d}s \\
 \end{equation*}
 となる．故に，\(\mathrm{sinc}(t)\notin L^1(\mathbb{R})\)である．つまり，\(\mathrm{sinc}\)関数は可積分関数ではないから，\(\hat{f_4}\)の逆フーリエ変換は直接計算することはできない．従って特に，反転公式は(このままの形では)成立しないことが分かる．
 \end{example}
+\section{反転公式}
+\begin{theorem}
+\label{th3-3}
+\(f\)を有界連続で可積分な関数とする．このとき
+\begin{equation*}
+    f(t)=\lim_{\varepsilon\to 0}\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\frac{\varepsilon^2\xi^2}{2}}e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi\quad(t\in\mathbb{R})
+\end{equation*}
+が成り立つ．
+\end{theorem}
+\begin{rem}
+\label{rem3-1}
+積分と極限が交換できれば，この公式の右辺は\(\mathcal{F}^*\hat{f}(t)\)に等しい．しかし，\(\mathcal{F}^*\hat{f}(t)\)の定義の無限積分(広義積分)は
+\begin{equation*}
+    \mathcal{F}^*\hat{f}(t)=\lim_{R\to\infty}\frac{1}{\sqrt{2\pi}}\int_{-R}^R e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi
+\end{equation*}
+で定義されているから，必ずしも同じ極限を持つとは限らない．
+\end{rem}
+\begin{proof}
+右辺の極限の中身を変形すると
+\begin{equation*}
+    \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\frac{\varepsilon^2\xi^2}{2}}e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi=\frac{1}{2\pi}\int\int e^{-\frac{\varepsilon^2\xi^2}{2}}e^{i(t-s)\xi}f(s)\mathrm{d}s\mathrm{d}\xi
+\end{equation*}
+となる．この右辺を\(I(\varepsilon, t)\)と書くことにしよう．すると
+\begin{equation*}
+    \int\int e^{-\frac{\varepsilon^2\xi^2}{2}}|f(s)|\mathrm{d}s\mathrm{d}\xi<\infty
+\end{equation*}
+であるから，重積分の順序交換ができる．従って，
+\begin{eqnarray}
+I(\varepsilon, t)&=&\int\left(\frac{1}{2\pi}\int e^{-\frac{\varepsilon^2\xi^2}{2}}e^{i(t-s)\xi}\mathrm{d}\xi\right)f(s)\mathrm{d}s \nonumber \\
+&=&\int\rho(\varepsilon, t-s)f(s)\mathrm{d}s \label{eq3-1}
+\end{eqnarray}
+と書ける．ここで，
+\begin{equation*}
+    \rho(\varepsilon, t):=\frac{1}{2\pi}\int_{-\infty}^\infty e^{-\frac{\varepsilon^2\xi^2}{2}}e^{it\xi}\mathrm{d}\xi
+\end{equation*}
+と定義した．つまり，\(\rho(\varepsilon, t)\)は\(\displaystyle e^{-\frac{\varepsilon^2\xi^2}{2}}\)の逆フーリエ変換の\(\displaystyle\frac{1}{\sqrt{2\pi}}\)倍である．これは，例\ref{ex3-3}で計算したように
+\begin{equation*}
+    \rho(\varepsilon, t)=\frac{1}{\varepsilon\sqrt{2\pi}}e^{-\frac{t^2}{2\varepsilon^2}}
+\end{equation*}
+である．\(\rho(\varepsilon, t)\)は次のような性質を持つ:
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\arabic{enumi})}
+    \item \(\rho(\varepsilon, t)>0\quad(\forall t\in\mathbb{R})\)
+    \item \(\displaystyle\int_{-\infty}^\infty\rho(\varepsilon, t)\mathrm{d}t=1\)が成立する．実際，\(\displaystyle s:=\frac{t}{\varepsilon}\)とおくことにより
+    \begin{equation*}
+        \int_{-\infty}^\infty\rho(\varepsilon, t)\mathrm{d}t=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-\frac{s^2}{2}}\mathrm{d}s=1
+    \end{equation*}
+    である．
+    \item \(\displaystyle\forall\delta>0,\ \lim_{\delta\to 0}\int_{|t|\geq\delta}\rho(\varepsilon, t)\mathrm{d}t=0\)が成立する．なぜならば，2)と同様の変数変換により
+    \begin{equation*}
+        \int_{|t|\geq\delta}\rho(\varepsilon, t)\mathrm{d}t=\frac{1}{\sqrt{2\pi}}\int_{|t|\geq\frac{\delta}{\varepsilon}}e^{-\frac{s^2}{2}}\mathrm{d}s\to 0\quad(\varepsilon\to 0)
+    \end{equation*}
+    だからである．
+\end{enumerate}
+さて，定理\ref{th2-14}とほぼ同様に，次のような定理が成り立つ．
+\begin{theorem}
+\label{th3-4}
+\(g_\varepsilon(t)(\varepsilon>0,\ t\in\mathbb{R})\)を，\(\varepsilon\)をパラメータとする\(\mathbb{R}\)上の有界連続関数で，次の条件を満たすものとする．
+\begin{enumerate}
+    \renewcommand{\labelenumi}{(\roman{enumi})}
+    \item \(\displaystyle\exists M>0\ \mathrm{s.t.}\ \forall\varepsilon>0,\ \int_{-\infty}^\infty g_\varepsilon(t)\mathrm{d}t=1, \int_{-\infty}^\infty|g_\varepsilon(t)|\mathrm{d}t\leq M\)
+    \item \(\displaystyle\forall\delta>0,\ \lim_{\varepsilon\to 0}\int_{|t|\geq\delta}\rho(\varepsilon, t)\mathrm{d}t=0\)
+\end{enumerate}
+このとき，任意の有界な連続関数\(f\)について
+\begin{equation*}
+    \lim_{\varepsilon\to 0}\int_{-\infty}^\infty g_\varepsilon(t-s)f(s)\mathrm{d}s=f(t)\quad(t\in\mathbb{R})
+\end{equation*}
+が成り立つ．
+\end{theorem}
+さて，定理\ref{th3-4}の証明の前に，定理\ref{th3-3}の証明を終わらせておこう．\(\rho(\varepsilon, t)\)は定理\ref{th3-4}の条件を満たすので，定理\ref{th3-3}は定理\ref{th3-4}と\eqref{eq3-1}より直ちに導かれる．
+\end{proof}
+では，定理\ref{th3-4}を証明しよう．
+\begin{proof}
+証明は，定理\ref{th2-14}とほとんど同じようにしてできるが，念のためもう一度計算しておこう．\(t\in\mathbb{R}\)を固定し，\(\varepsilon>0\)とすると，仮定(i)の初めの等式を用いて
+\begin{eqnarray*}
+f(t)-\int_{-\infty}^\infty g_\varepsilon(t-s)f(s)\mathrm{d}s&=&\int_{-\infty}^\infty g_\varepsilon(s)f(t)\mathrm{d}s-\int_{-\infty}^\infty g_\varepsilon(s)f(t-s)\mathrm{d}s \\
+&=&\int_{-\infty}^\infty g_\varepsilon(s)(f(t)-f(t-s))\mathrm{d}s
+\end{eqnarray*}
+と書ける．\(a>0\)を任意の小さな数として固定する．\(f\)は\(t\)で連続だから，\(\delta>0\)を十分小さくとれば，すべての\(t\in\mathbb{R}\)に対して
+\begin{equation*}
+    |f(t)-f(t-s)|<\frac{a}{2M}\quad(|s|<\delta)
+\end{equation*}
+が成り立つようにできる．すると，
+\begin{align*}
+    &\left|f(t)-\int_{-\infty}^\infty g_\varepsilon(t-s)f(s)\mathrm{d}s\right|=\left|\int_{-\infty}^\infty g_\varepsilon(s)(f(t)-f(t-s))\mathrm{d}s\right| \\
+    &\leq\int_{-\delta}^\delta |g_\varepsilon(s)||f(t)-f(t-s)|\mathrm{d}s+\int_{|s|\geq\delta}|g_\varepsilon(s)||f(t)-f(t-s)|\mathrm{d}s \\
+    &\leq\frac{a}{2M}\int_{-\delta}^\delta |g_\varepsilon(s)|\mathrm{d}s+2\sup_{s\in\mathbb{R}}\int_{|s|\geq\delta}|g_\varepsilon(s)|\mathrm{d}s \\
+    &\leq\frac{a}{2}+2\sup_{s\in\mathbb{R}}\int_{|s|\geq\delta}|g_\varepsilon(s)|\mathrm{d}s
+\end{align*}
+が成り立つ．仮定(ii)より，最後の項は\(\varepsilon\to 0\)で0に収束する．\(a>0\)は任意の小さな数だったから，これは\(\displaystyle f(t)-\int_{-\infty}^\infty g_\varepsilon(t-s)f(s)\mathrm{d}s\)が\(\varepsilon\to 0\)で0に収束することを示している．
+\end{proof}
+\begin{theorem} \upshape{\bf{(反転公式)}}
+\label{th3-5}
+\(f,\ \hat{f}\)は有界連続な可積分関数とする．このとき，\(f=\mathcal{F}^*\hat{f}\)が成り立つ．つまり，
+\begin{equation*}
+    f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi\quad(t\in\mathbb{R})
+\end{equation*}
+が成り立つ．同様に，\(f=\mathcal{F}\check{f}\)も成り立つ
+\footnote{\(\check{f}(t)=\hat{f}(-t)\)だから，上の仮定の下で\(\check{f}\)も有界連続で可積分である．また，\(f\)が可積分なので，\(\hat{f}\)が有界連続であることは命題\ref{prop3-2}から自動的に従う．
+}．
+\end{theorem}
+\begin{proof}
+\(f=\mathcal{F}^*\hat{f}\)だけ証明する．定理\ref{th3-3}より，
+\begin{equation}
+    \int_{-\infty}^\infty e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi=\lim_{\varepsilon\to 0}\int_{-\infty}^\infty e^{-\frac{\varepsilon^2\xi^2}{2}}e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi \label{eq3-2}
+\end{equation}
+を示せばよい．\(\hat{f}\)は可積分関数なので，
+\begin{equation*}
+    \forall\delta>0,\ \exists R>0\ \mathrm{s.t.}\ \int_{|\xi|\geq R}\left|\hat{f}(\xi)\right|\mathrm{d}\xi<\delta
+\end{equation*}
+が成立する．すると，
+\begin{align*}
+    &\left|\int_{-\infty}^\infty e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi-\int_{-\infty}^\infty e^{-\frac{\varepsilon^2\xi^2}{2}}e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi\right| \\
+    &=\left|\int_{-\infty}^\infty\left(1-e^{-\frac{\varepsilon^2\xi^2}{2}}\right)e^{it\xi}\hat{f}(\xi)\mathrm{d}\xi\right| \\
+    &\leq\int_{-\infty}^\infty\left(1-e^{-\frac{\varepsilon^2\xi^2}{2}}\right)e^{it\xi}\left|\hat{f}(\xi)\right|\mathrm{d}\xi \\
+    &\left(1-e^{-\frac{\varepsilon^2 R^2}{2}}\right)\int_{-R}^R\left|\hat{f}(\xi)\right|\mathrm{d}\xi+\int_{|\xi|\geq R}\left|\hat{f}(\xi)\right|\mathrm{d}\xi\to\delta\quad(\varepsilon\to 0)
+\end{align*}
+となる．\(\delta>0\)はいくらでも小さくとれるから，これは左辺が0に収束することを意味している．つまり，\eqref{eq3-2}が示され，定理の証明が終わった．
+\end{proof}
+定理\ref{th3-5}では，\(f\)と\(\hat{f}\)がともに可積分であるという仮定をした．\(\hat{f}\)が可積分であるという仮定は，ある意味で\(f\)の正則性(滑らかさ)に関する仮定と考えることができるのだが，\(f\)から直接確かめられる性質ではない．実際，\(t\geq 0,\ \forall n\in\mathbb{N},\ \delta\in(0, 1)\)に対して，\(g(-t)=g(t)\)が成り立つような関数\(g\)を
+\begin{equation*}
+    g(t):=
+    \begin{cases}
+    4n^{4-\delta}(t-n) & \left(t-n\in\left[-\frac{1}{2}n^{-3}, 0\right]\right) \\
+    -4n^{4-\delta}\left(t-n-n^{-3}\right) & \left(t-n\in\left[-n^{-3}, -\frac{1}{2}n^{-3}\right]\right) \\
+    0 & (\mathrm{otherwise})
+    \end{cases}
+\end{equation*}
+で定め，関数\(f\)を
+\begin{equation*}
+    f(t):=\int_{-\infty}^t g(s)\mathrm{d}s
+\end{equation*}
+で定めると，
+\begin{equation*}
+    f(t)\leq
+    \begin{cases}
+    \sum_{n=-\infty}^l n^{-\delta-2} & (t\in(-l, -l+1)) \\
+    \sum_{n=l}^\infty n^{-\delta-2} & (t\in(l-1, l))
+    \end{cases}
+\end{equation*}
+となる．このとき，\(f\)は\(C^1\)級かつ\(f, f'\in L^1(\mathbb{R})\)であるが，\(f'\)は非有界である．しかし，フーリエ級数に関する定理\ref{th1-3}と同様に，次の定理が成り立つ．
+\begin{theorem}
+\label{th3-6}
+\(f\)が\(C^1\)級関数で，\(f,\ f'\)がともに可積分であるならば，\(\hat{f}\)は可積分である．特に，フーリエの反転公式\(f=\mathcal{F}^*\hat{f}\)が成立する．
+\end{theorem}
+この定理の証明は，後で与える．
 \end{document}
