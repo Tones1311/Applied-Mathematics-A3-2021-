@@ -1776,4 +1776,240 @@ f(t)-\int_{-\infty}^\infty g_\varepsilon(t-s)f(s)\mathrm{d}s&=&\int_{-\infty}^\i
 \(f\)が\(C^1\)級関数で，\(f,\ f'\)がともに可積分であるならば，\(\hat{f}\)は可積分である．特に，フーリエの反転公式\(f=\mathcal{F}^*\hat{f}\)が成立する．
 \end{theorem}
 この定理の証明は，後で与える．
+\section{内積とプランシェレルの定理} \label{sec3-5}
+\begin{definition}
+\label{def3-3}
+\(f\)は\(\mathbb{R}\)から\(\mathbb{C}\)への関数とする．\(f\)が\(L^2\)-条件を満たす，つまり\(f\in L^2(\mathbb{R})\)であるとは，任意の有界区間上で\(f(t)\)が広義積分可能であり，加えて\(|f(t)|^2\)が可積分，つまり\(|f(t)|^2\in L^1(\mathbb{R})\)であることを言う\footnote{厳密には，\(L^2(\mathbb{R})\)はルベーグ積分の意味で可測で\(\displaystyle\int|f(t)|^2\mathrm{d}t<\infty\)であるような関数全体の集合として定義される．大まかに言えば，上に書いた条件を満たす関数全体の集合が\(L^2(\mathbb{R})\)であると思ってもよい．}．\(f\in L^2(\mathbb{R})\)のとき
+\begin{equation*}
+    ||f||=\left(\int_{-\infty}^\infty|f(t)|^2\mathrm{d}t\right)^{\frac{1}{2}}
+\end{equation*}
+により，\(f\)のノルム(長さ)を定義する．また，\(f, g\in L^2(\mathbb{R})\)のとき，\(f\)と\(g\)の内積を
+\begin{equation*}
+    \langle f, g\rangle=\int_{-\infty}^\infty f(t)\overline{g(t)}\mathrm{d}t
+\end{equation*}
+で定義する．特に，\(||f||^2=\langle f, f\rangle\)である．
+\end{definition}
+さて，任意の\(f, g\)について
+\begin{equation*}
+    \left|f(t)\overline{g(t)}\right|\leq\frac{1}{2}\left(|f(t)|^2+|g(t)|^2\right)
+\end{equation*}
+なので，\(f, g\in L^2(\mathbb{R})\)なら内積の定義の積分は絶対収束する．この内積は，(周期関数に関する内積の場合と同様に)次のような性質を満たす: \(f, g, h\in L^2(\mathbb{R}),\ \alpha, \beta\in\mathbb{R}\)のとき，
+\begin{eqnarray*}
+\langle\alpha f+\beta g, h\rangle&=&\alpha\langle f, h\rangle+\beta g, h\rangle \\
+\langle f, \alpha g+\beta h\rangle&=&\overline{\alpha}\langle f, g\rangle+\overline{\beta}\langle f, h\rangle \\
+\langle f, g\rangle&=&\overline{\langle g, f\rangle}
+\end{eqnarray*}
+が成り立つ．また，\ref{sec1-8}節と全く同じ計算により，シュワルツの不等式，三角不等式が成り立つ．つまり，\(f, g\in L^2(\mathbb{R})\)ならば
+\begin{eqnarray*}
+|\langle f, g\rangle|&\leq&||f||\cdot||g|| \\
+||f+g||&\leq&||f||+||g||
+\end{eqnarray*}
+が成り立つ．\\
+　さて，フーリエ変換の議論に戻ろう．
+\begin{theorem} \upshape{\bf{(プランシェレルの定理)}}
+\label{th3-7}
+\(f, g, \hat{g}\in L^1(\mathbb{R})\)がすべて有界ならば
+\begin{equation*}
+    \langle f, g\rangle=\left\langle\hat{f}, \hat{g}\right\rangle
+\end{equation*}
+が成り立つ．また，\(f\in L^1(\mathbb{R})\)が有界連続ならば
+\begin{equation*}
+    ||f||=\left|\left|\hat{f}\right|\right|
+\end{equation*}
+が成り立ち，特に\(f, \hat{f}\in L^2(\mathbb{R})\)である．つまり，フーリエ変換は関数のノルム(長さ)を変えない写像である．
+\end{theorem}
+\begin{proof}
+前半のみ証明する．\(f, g\in L^1(\mathbb{R})\)とすると，命題\ref{prop3-2}より\(\hat{f}\)は有界である．すると
+\begin{eqnarray*}
+\left\langle\hat{f}, g\right\rangle&=&\int_{-\infty}^\infty\left(\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-its}f(s)\mathrm{d}s\right)\overline{g(t)}\mathrm{d}t \\
+&=&\int_{-\infty}^\infty f(s)\overline{\left(\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{its}g(t)\mathrm{d}t\right)}\mathrm{d}s=\left\langle f, \check{g}\right\rangle
+\end{eqnarray*}
+である．ここで，\(\displaystyle\int_{-\infty}^\infty\int_{-\infty}^\infty|f(s)||g(t)|\mathrm{d}s\mathrm{d}t<\infty\)なので積分の順序交換ができることを用いた．さらに，仮定より\(\hat{g}\)も可積分なので，\(g\)と\(\hat{g}\)を入れ替え，定理\ref{th3-5}を用いると
+\begin{equation*}
+    \left\langle\hat{f}, \hat{g}\right\rangle=\left\langle f, \mathcal{F}^*\hat{g}\right\rangle=\langle f, g\rangle
+\end{equation*}
+が成り立つことが分かる．以上で定理の前半の主張が示された．後半の証明については，巻末の付録を参照せよ．
+\end{proof}
+\section{平行移動，微分とフーリエ変換} \label{sec3-6}
+\(\mathbb{R}\)上の関数の平行移動を
+\begin{equation*}
+    T_s f(t)=f(t-s)\quad(s, t\in\mathbb{R})
+\end{equation*}
+と書こう．すると，\(T_s f\)のフーリエ変換は
+\begin{eqnarray*}
+\mathcal{F}[T_s f](\xi)&=&\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-it\xi}f(t-s)\mathrm{d}t \\
+&=&\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-i(u+s)\xi}f(u)\mathrm{d}u\quad(u=t-s) \\
+&=&e^{-is\xi}\hat{f}(\xi)
+\end{eqnarray*}
+となる．同様に
+\begin{equation*}
+    \mathcal{F}^*[T_sf](t)=e^{ist}\check{f}(t)
+\end{equation*}
+も示される．これらから容易に想像できるように，\(e^{ist}f(t)\)のフーリエ変換は\(T_s\hat{f}\)であり，\(e^{-is\xi}f(\xi)\)の逆フーリエ変換は\(T_s\check{f}\)である．実際，直接計算してみると
+\begin{eqnarray*}
+\mathcal{F}\left[e^{ist}f(t)\right](\xi)&=&\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty e^{-i(\xi-s)t}f(t)\mathrm{d}t \\
+&=&\hat{f}(\xi-s)=T_s\hat{f}(\xi)
+\end{eqnarray*}
+となる．以上をまとめて，次の命題が示された．
+\begin{prop}
+\label{prop3-8}
+\(f\)が可積分関数ならば
+\begin{equation*}
+    \mathcal{F}[T_s f](\xi)=e^{-is\xi}\hat{f}(\xi),\quad \mathcal{F}^*[T_sf](t)=e^{ist}\check{f}(t)
+\end{equation*}
+\begin{equation*}
+    \mathcal{F}\left[e^{ist}f(t)\right](\xi)=T_s\hat{f}(\xi),\quad \mathcal{F}^*\left[e^{-is\xi}f(\xi)\right](t)=T_s\check{f}(t)
+\end{equation*}
+が成り立つ．
+\end{prop}
+さて，\(f\)が微分可能であると仮定しよう．すると，
+\begin{equation*}
+    f'(t)=\lim_{h\to 0}\left(f(t+h)-f(t)\right)=\lim_{h\to 0}\frac{1}{h}\left((T_{-h}f)(t)-f(t)\right)
+\end{equation*}
+と書ける．両辺にフーリエ変換を施して，上の命題を使い，形式的に極限とフーリエ変換の順序交換を行うと
+\begin{equation*}
+    \mathcal{F}[f'](\xi)=\lim_{h\to 0}\frac{1}{h}\left(e^{ih\xi}-1\right)\hat{f}(\xi)=i\xi\cdot\hat{f}(\xi)
+\end{equation*}
+と計算できる．この計算は，\(f'\)が可積分であれば正当化できる．
+\begin{theorem}
+\label{th3-9}
+\(f\)が\(C^1\)級関数であり，\(f, f'\)が可積分であれば
+\begin{equation*}
+    \mathcal{F}[f'](\xi)=i\xi\hat{f}(\xi)\quad(\xi\in\mathbb{R})
+\end{equation*}
+\begin{equation*}
+    \mathcal{F}^*[f'](t)=-it\check{f}(t)\quad(t\in\mathbb{R})
+\end{equation*}
+\begin{equation*}
+    \exists C>0\ \mathrm{s.t.}\ \left|\hat{f}(\xi)\right|\leq C\left(1+|\xi|\right)^{-1}\quad(\xi\in\mathbb{R})
+\end{equation*}
+が成り立つ．
+\end{theorem}
+\begin{proof}
+任意の\(t\in\mathbb{R}\)について，
+\begin{equation*}
+    f(t)=f(0)+\int_0^t f'(s)\mathrm{d}s
+\end{equation*}
+と書ける．すると，\(f'\in L^1(\mathbb{R})\)より，\(\displaystyle\int_0^{\pm\infty}f'(t)\mathrm{d}t\)が存在する．故に，\(\displaystyle \lim_{t\to\pm\infty}f(t)=:\alpha_{\pm}\)が存在する．ここで，\(\alpha_+, \alpha_-\)の少なくとも一方が0とすると，
+\begin{equation*}
+    \int_{-\infty}^\infty|f(t)|\mathrm{d}t=\infty
+\end{equation*}
+となるが，これは\(f\in L^1(\mathbb{R})\)であることに矛盾する．よって，
+\begin{equation*}
+    \lim_{t\to\pm\infty}f(t)=0
+\end{equation*}
+となる．ところで，\(R>0\)に対して，
+\begin{equation*}
+    \int_{-R}^R e^{-it\xi}f'(t)\mathrm{d}t=\left[e^{-it\xi}f(t)\right]_{-R}^R-\int_{-R}^R(-i\xi)e^{-it\xi}f(t)\mathrm{d}t\quad(\mbox{部分積分})
+\end{equation*}
+が成り立つ．上式において\(R\to\infty\)とすると，
+\begin{equation*}
+    \mathcal{F}[f'](\xi)=i\xi\hat{f}(\xi)
+\end{equation*}
+を得る．従って，定理の前半の主張が示された．後半の主張は，命題\ref{prop3-2}より明らか．
+\end{proof}
+この定理は，高階微分についても同様に成立する．つまり，\(f^{(k)}\)を\(f\)の\(k\)階微分とするとき，もし\(f, f', \dots, f^{(n)}\)がすべて可積分であると仮定すると
+\begin{equation*}
+    \mathcal{F}\left[f^{(n)}\right](\xi)=(i\xi)^n\hat{f}(\xi)\quad(\xi\in\mathbb{R})
+\end{equation*}
+であることが，上の定理から従うことが容易に分かる．このとき，\(\mathcal{F}\left(f^{(n)}\right)\)は可積分関数のフーリエ変換だから有界である．このことから直ちに次の系が従う．
+\begin{cor}
+\label{cor3-10}
+\(n\geq 1\)とする．\(f\)が\(C^n\)級であり，\(f, f', \dots, f^{(n)}\)が可積分関数ならば
+\begin{equation*}
+    \mathcal{F}\left[f^{(n)}\right](\xi)=(i\xi)^n\hat{f}(\xi),\quad\mathcal{F}^*\left[f^{(n)}\right](t)=(-it)^n\check{f}(t)
+\end{equation*}
+\begin{equation*}
+    \exists C>0\ \mathrm{s.t.}\ \left|\hat{f}(\xi)\right|\leq C\left(1+|\xi|\right)^{-n}\quad(\xi\in\mathbb{R})
+\end{equation*}
+が成り立つ．
+\end{cor}
+さて，逆に\(\hat{f}(\xi)\)の微分を考えてみよう．また形式的に(収束を気にしないで)計算してみると
+\begin{equation*}
+    \hat{f}'(\xi)=\frac{1}{\sqrt{2\pi}}\int (-it)e^{-it\xi}f(t)\mathrm{d}t=\mathcal{F}[-itf(t)](\xi)
+\end{equation*}
+と書くことができる．つまり，\(\hat{f}'(\xi)\)は\(-itf(t)\)のフーリエ変換である．これは，定理\ref{th3-9}の公式にフーリエ変換を施しても同じものが得られ，辻褄が合っている．実際，次の定理が成立する．
+\begin{theorem}
+\label{th3-11}
+\(f(t), tf(t)\)が可積分ならば，\(\hat{f}(\xi), \check{f}(t)\)は\(C^1\)級であり
+\begin{equation*}
+    \hat{f}'(\xi)=\mathcal{F}[-itf(t)](\xi),\quad\check{f}'(t)=\mathcal{F}[i\xi f(\xi)](t)
+\end{equation*}
+が成り立つ．より一般に，\(f(t), t^nf(t)\in L^1(\mathbb{R})\)ならば，\(\hat{f}(\xi), \check{f}(t)\)は\(C^n\)級であり
+\begin{equation*}
+    \hat{f}^{(n)}(\xi)=\mathcal{F}[(-it)^n f(t)](\xi),\quad\check{f}^{(n)}(t)=\mathcal{F}[(i\xi)^n f(\xi)](t)
+\end{equation*}
+が成り立つ．
+\end{theorem}
+\begin{proof}
+\(tf(t)\in L^1(\mathbb{R})\)という仮定より，フーリエ変換の定義の積分と，微分の順序交換ができる．つまり，上の計算は正当化できて，定理の主張が従う．後半についても同様に示せる．
+\end{proof}
+定理\ref{th3-9}，定理\ref{th3-11}は互いに逆変換の形をしているが，「ぴったり」逆ではないことに注意する必要がある．つまり，\(f, f'\)が可積分ならば\(\xi\hat{f}(\xi)\)は有界である．定理\ref{th3-6}から\(\hat{f}(\xi)\)は可積分だが，\(\xi\hat{f}(\xi)\)が可積分かどうかは分からない．\(\xi\hat{f}(\xi)\)が可積分と仮定すると，\(f\)が\(C^1\)級であることは再現できるが，\(f'\)が可積分かどうかはやはり分からない．このように，フーリエ変換の微分可能性と，\(\xi\hat{f}(\xi)\)の性質の関係は「隙間」がある．これを埋めることは，このような形ではできない．ノルム\(||\cdot||\)を用いた，いわゆる\(L^2\)-理論を用いるとこのような問題のない理論を作ることができるが，ルベーグ積分の知識が必要であり，この講義の範囲を超えるため，ここでは省略する．
+\section{定理\ref{th3-6}の証明とリーマン・ルベーグの定理} \label{sec3-7}
+まず，定理\ref{th3-6}を証明しよう．
+\begin{proof}
+前節で示した微分とフーリエ変換の関係と，プランシェレルの定理を組み合わせて証明する．\(f\)と\(f'\)が可積分であると仮定する．\(\hat{f}(\xi)\)を
+\begin{equation*}
+    \hat{f}(\xi)=(1+i\xi)^{-1}(1+i\xi)\hat{f}(\xi)=(1+i\xi)^{-1}\left(\hat{f}(\xi)+\mathcal{F}[f'](\xi)\right)
+\end{equation*}
+と書きなおす．\(g(\xi):=(1+i\xi)^{-1}\)とおけば
+\begin{equation*}
+    ||g||^2=\int_{-\infty}^\infty\left|(1+i\xi)^{-1}\right|^2\mathrm{d}\xi=\int_{-\infty}^\infty\frac{\mathrm{d}\xi}{1+\xi^2}=\pi
+\end{equation*}
+なので，\(g\)は\(L^2\)-条件を満たす．また，プランシェレルの定理(定理\ref{th3-7})により，\(\hat{f}, \mathcal{F}[f']\int L^2(\mathbb{R})\)かつ
+\begin{equation*}
+    \left|\left|\hat{f}\right|\right|=||f||,\quad||\mathcal{F}[f']||=||f'||
+\end{equation*}
+である．また，定理\ref{th3-9}の証明から，\(f\)は有界であり，特に\(\displaystyle\lim_{t\to\infty}f(t)=0\)である．よって，シュワルツの不等式と三角不等式により
+\begin{eqnarray*}
+\int_{-\infty}^\infty\left|\hat{f}(\xi)\right|\mathrm{d}\xi&=&\int_{-\infty}^\infty|g(\xi)|\left|\hat{f}(\xi)+\mathcal{F}[f'](\xi)\right|\mathrm{d}\xi \\
+&\leq&||g||\left(||f||+||f'||\right)<\infty
+\end{eqnarray*}
+となり，\(\hat{f}\in L^1(\mathbb{R})\)が示された．
+\end{proof}
+前節でみたように，\(f, f'\)が可積分ならば，\(|\xi|\to\infty\)のとき\(\hat{f}(\xi)=O\left(|\xi|^{-1}\right)\)である．一般に，\(f\)が滑らかであるほど，\(\hat{f}\)は遠方で早く減少する．では，\(f\)が可積分，という条件だけで\(\hat{f}\)は遠方で減少するだろうか．この問いに答えるのが，有名な「リーマン・ルベーグの定理」である．
+\begin{theorem} \upshape{\bf{(リーマン・ルベーグの定理)}}
+\label{th3-12}
+\(f\in L^1(\mathbb{R})\)ならば，\(|\xi|\to\infty\)のとき\(\hat{f}(\xi)\to 0\)となる．
+\end{theorem}
+\begin{proof}
+区間\(I\)の定義関数\(\chi_I\)を
+\begin{equation*}
+    \chi_I(x)=
+    \begin{cases}
+    1 & (x\in I) \\
+    0 & (x\notin I)
+    \end{cases}
+\end{equation*}
+と表す．積分の定義を思い出すと，\(f\)の積分は，\(f\)を階段関数の極限で表して，階段関数の積分の極限として定義されている．つまり，階段関数の列\(g_n\)を用いて
+\begin{equation*}
+    \int f(t)\mathrm{d}t:=\lim_{n\to\infty}\int g_n(t)\mathrm{d}t
+\end{equation*}
+と定義している．従って，\(f\)が可積分ならば，\(\varepsilon>0\)をどのように小さくとっても，階段関数\(g\)で
+\begin{equation}
+    \int_{-\infty}^\infty|f(t)-g(t)|\mathrm{d}t<\varepsilon \label{eq3-3}
+\end{equation}
+を満たすものが存在する．\(g\)は階段関数なので
+\begin{equation*}
+    g(t)=\sum_{j=1}^N c_j\chi_{I_j}(t),\quad I_j=[a_j, b_j],\quad c_j\in\mathbb{C}
+\end{equation*}
+と表現できる．\(g\)のフーリエ変換は
+\begin{eqnarray*}
+\hat{g}(\xi)&=&\sum_{j=1}^N c_j\mathcal{F}[\chi_{I_j}](\xi) \\
+&=&\frac{1}{\sqrt{2\pi}}\frac{1}{i\xi}\sum_{j=1}^N c_j\left(e^{-ia_j\xi}-e^{-ib_j\xi}\right)
+\end{eqnarray*}
+と計算出来るから，
+\begin{equation*}
+    \exists C>0\ \mathrm{s.t.}\ \left|\hat{g}(\xi)\right|\leq C|\xi|^{-1}\quad(\xi\in\mathbb{R})
+\end{equation*}
+が成り立つ．よって，十分大きな\(|\xi|\)に対して\(\displaystyle\left|\hat{g}(\xi)\right|\leq\frac{\varepsilon}{\sqrt{2\pi}}\)となる．一方\eqref{eq3-3}より
+\begin{equation*}
+    \left|\hat{f}(\xi)-\hat{g}(\xi)\right|\leq\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty|f(t)-g(t)|\mathrm{d}t<\frac{\varepsilon}{\sqrt{2\pi}}\quad(\xi\in\mathbb{R})
+\end{equation*}
+なので，上の不等式と組み合わせて
+\begin{equation*}
+    \left|\hat{f}(\xi)\right|\leq\frac{2\varepsilon}{\sqrt{2\pi}}
+\end{equation*}
+が成り立つことが分かる．\(\varepsilon>0\)は任意の数であったから，定理の主張が示されたことになる．
+\end{proof}
 \end{document}
