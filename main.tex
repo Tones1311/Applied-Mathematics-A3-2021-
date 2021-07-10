@@ -2012,4 +2012,176 @@ f(t)-\int_{-\infty}^\infty g_\varepsilon(t-s)f(s)\mathrm{d}s&=&\int_{-\infty}^\i
 \end{equation*}
 が成り立つことが分かる．\(\varepsilon>0\)は任意の数であったから，定理の主張が示されたことになる．
 \end{proof}
+\section{畳み込みとフーリエ変換} \label{sec3-8}
+最初に，実数直線上の関数の畳み込みを定義し，その基本的な性質を調べよう．
+\begin{definition}
+\label{def3-4}
+\(f, g\)を\(\mathbb{R}\)上の関数とする．\(t\in\mathbb{R}\)に対して，積分
+\begin{equation*}
+    h(t)=\int_{-\infty}^\infty f(t-s)g(s)\mathrm{d}s
+\end{equation*}
+が意味を持つとき，\(h\)を\(f\)と\(g\)の\textcolor{red}{畳み込み}と呼び，\(h=f*g\)と書く．
+\end{definition}
+定義から直ちに分かるように，変数変換\(u:=t-s\)を行えば
+\begin{equation*}
+    f*g(t)=\int_{-\infty}^\infty f(u)g(t-u)\mathrm{d}u=g*f(t)
+\end{equation*}
+が成り立つ．つまり，\(f*g=g*f\)であり，畳み込みは可換な演算であることが分かる．
+\begin{prop}
+\label{prop3-13}
+\(f, g\in L^1(\mathbb{R})\)とし，\(f\)または\(g\)の少なくとも一方は有界であるとする．このとき，\(f*g\in L^1(\mathbb{R})\)となり，また\(f*g\)は有界連続となる．
+\end{prop}
+\begin{proof}
+\(f*g\)が定義されて，なおかつ有界であることは
+\begin{equation*}
+    |f*g(t)|\leq\int|f(s)g(t-s)|\mathrm{d}s\leq\sup|g|\cdot\int|f(s)|\mathrm{d}s<\infty
+\end{equation*}
+であることから分かる．また
+\begin{eqnarray*}
+\int|f*g(t)|\mathrm{d}t&\leq&\int\int|f(s)g(t-s)|\mathrm{d}s\mathrm{d}t \\
+&=&\int\left(\int|g(t-s)|\mathrm{d}t\right)|f(s)|\mathrm{d}s \\
+&=&\left(\int|g(t)|\mathrm{d}t\right)\left(\int|f(s)|\mathrm{d}s\right)<\infty
+\end{eqnarray*}
+なので，\(f*g\)は可積分である．あとは，\(f*g\)が連続であることを示せばよい．リーマン・ルベーグの定理の証明で注意したように，任意の\(n\)に対して，階段関数\(F_n(t), G_n(t)\)で
+\begin{equation*}
+    \int|f(t)-F_n(t)|\mathrm{d}t<\frac{1}{n},\quad\int|g(t)-G_n(t)|\mathrm{d}t<\frac{1}{n}
+\end{equation*}
+を満たすものが存在する．しかも
+\begin{equation*}
+    \sup|F_n|\leq\sup|f|,\quad\sup|G_n|\leq\sup|g|
+\end{equation*}
+と仮定してよい．さて，
+\begin{equation*}
+    F_n(t)=\sum_{j=1}^N c_j\chi_{I_j}(t),\quad G_n(t)=\sum_{k=1}^M d_k\chi_{J_k}(t)
+\end{equation*}
+と書こう．但し，\(c_j, d_k\in\mathbb{C},\ I_j, I_k\)は区間である．すると
+\begin{equation*}
+    F_n*G_n(t)=\sum_{j=1}^N\sum_{k=1}^M c_jd_k(\chi_{I_j}*\chi_{J_k})(t)
+\end{equation*}
+と書ける．一般に，階段関数同士の畳み込みは連続関数であるから，\(F_n*G_n\)も連続である．一方，\(F_n, G_n\)の定義から
+\begin{eqnarray*}
+|f*g(t)-F_n*G_n(t)|&=&|(f-F_n)*g(t)+F_n*(g-G_n)(t)| \\
+&\leq&\sup|g|\int|f(s)-F_n(s)|\mathrm{d}s+\sup|F_n|\int|g(s)-G_n(s)|\mathrm{d}s \\
+&\leq&\left(\sup|f|+\sup|g|\right)\cdot\frac{1}{n}
+\end{eqnarray*}
+が成り立つ．つまり，\(f*g\)は連続関数\(F_n*G_n\)の一様収束極限である．従って，\(f*g\)も連続である．
+\end{proof}
+次の命題を述べる前に，局所可積分性について定義しておこう．\(f\)が\textcolor{red}{局所可積分}であるとは，どのような有界区間\(I\)上でも(広義)積分が定義できて，\(\displaystyle\int_I |f(t)|<\infty\)を満たすことである．このとき，上と同様に，次の命題が証明される．
+\begin{prop}
+\label{prop3-14}
+\(f\)が有界な局所可積分関数，\(g\in L^1(\mathbb{R})\)ならば，\(f*g\)は有界な連続関数である．
+\end{prop}
+\begin{prop}
+\label{prop3-15}
+\(f, g\in L^1(\mathbb{R})\)とし，これらは有界な台を持つ有界関数とする．このとき，\(f*g\)は有界な台を持つ連続関数である．
+\end{prop}
+以上2つの命題の証明は演習問題にする．\\
+　次に，畳み込みと微分との関係を見ておこう．
+\begin{prop}
+\label{prop3-16}
+\(f\)を有界な\(C^1\)級関数とし，\(f, f'\in L^1(\mathbb{R})\)であると仮定する．また，\(g\)は局所可積分関数とする．このとき，\(f*g\)は有界な\(C^1\)級関数であり，
+\begin{equation*}
+    (f*g)'=f'*g
+\end{equation*}
+が成り立つ．
+\end{prop}
+証明は，微分と積分の順序交換ができる条件を確かめればよい．詳細は省略する．\\
+　さて，畳み込みとフーリエ変換の関係は次のように書ける．
+\begin{theorem}
+\label{th3-17}
+\begin{enumerate}
+    \renewcommand{\labelenumi}{(\arabic{enumi})}
+    \item \(f, g\in L^1(\mathbb{R})\)が有界ならば
+    \begin{equation*}
+        \mathcal{F}[f*g](\xi)=\sqrt{2\pi}\hat{f}(\xi)\hat{g}(\xi),\quad\mathcal{F}^*[f*g](t)=\sqrt{2\pi}\check{f}(t)\check{g}(t)
+    \end{equation*}
+    \item \(f, g, \hat{g}\in L^1(\mathbb{R})\)が有界ならば
+    \begin{equation*}
+        \mathcal{F}[fg](\xi)=\frac{1}{\sqrt{2\pi}}\left(\hat{f}*\hat{g}\right)(\xi),\quad\mathcal{F}^*[fg](t)=\frac{1}{\sqrt{2\pi}}\left(\check{f}*\check{g}\right)(t)
+    \end{equation*}
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+まず，(1)を示す．\(f, g\)が可積分ならば，\(f*g\)も可積分となることに注意して
+\begin{eqnarray*}
+\mathcal{F}[f*g](\xi)&=&\frac{1}{\sqrt{2\pi}}\int\int f(s)g(t-s)e^{-it\xi}\mathrm{d}s\mathrm{d}t \\
+&=&\int\left(\frac{1}{\sqrt{2\pi}}\int g(t-s)e^{-i(t-s)\xi}\mathrm{d}\xi\right)f(s)e^{-is\xi}\mathrm{d}s \\
+&=&\sqrt{2\pi}\hat{f}(\xi)\hat{g}(\xi)
+\end{eqnarray*}
+が得られる．\(\mathcal{F}^*[f*g](t)=\sqrt{2\pi}\check{f}(t)\check{g}(t)\)も同様にして示される．\\
+　次に，(2)を示す．\(f, g, \hat{f}, \hat{g}\)が有界可積分ならば，(1)の結果と反転公式を組み合わせて(2)は直ちに従う．しかし，ここでは\(\hat{f}\)は可積分と仮定していないので，直接計算して証明しよう．\(g\)に関する反転公式: \(g=\mathcal{F}^*\hat{g}\)を代入して
+\begin{eqnarray*}
+\mathcal{F}[fg](\xi)&=&\frac{1}{2\pi}\int f(t)\left(\int\hat{g}(\eta)e^{it\eta}\mathrm{d}\eta\right)e^{-it\xi}\mathrm{d}t \\
+&=&\frac{1}{2\pi}\int\left(\int f(t)e^{-it(\xi-\eta)}\mathrm{d}t\right)\hat{g}(\eta)\mathrm{d}\eta \\
+&=&\frac{1}{\sqrt{2\pi}}\int\hat{f}(\xi-\eta)\hat{g}(\eta)\mathrm{d}\eta=\frac{1}{\sqrt{2\pi}}\hat{f}*\hat{g}(\xi)
+\end{eqnarray*}
+が得られる．ここでも，\(f\)と\(\hat{g}\)が可積分なので積分の順序交換ができることを用いた．もう1つの公式も同様に証明される．
+\end{proof}
+\section{簡単な偏微分方程式への応用} \label{sec3-9}
+\subsection{\(\mathbb{R}\)上の熱方程式} \label{subsec3-9-1}
+無限の長さの棒の温度分布を考える．位置\(x\in\mathbb{R}\)，時刻\(t>0\)での温度を\(u(x, t)\)と書くことにすると，\ref{sec2-2}節と同様に\(u(x, t)\)は熱方程式
+\begin{equation*}
+    \begin{cases}
+    \frac{\partial u}{\partial t}=\frac{\partial^2 u}{\partial x^2} & (x\in\mathbb{R},\ t>0) \\
+    u(x, 0)=f(x) & (x\in\mathbb{R}) \\
+    u(x, t)\to 0 & (|x|\to\infty)
+    \end{cases}
+\end{equation*}
+に従う．さて，初期温度分布\(f(x)\in L^1(\mathbb{R})\)であるような解を求めよう．熱方程式の両辺の\(x\)に関するフーリエ変換を考えると，\(u\)が\(x\)について2階微分可能で，\(u, u', u''\in L^1(\mathbb{R})\)と仮定すれば
+\begin{equation*}
+    \frac{\partial}{\partial t}\hat{u}(\xi, t)=-\xi^2u(\xi, t)\quad(\xi\in\mathbb{R}, t>0)
+\end{equation*}
+が得られる．初期条件:
+\begin{equation*}
+    \hat{u}(\xi, 0)=\hat{f}(\xi)
+\end{equation*}
+と合わせてこの方程式を解くと
+\begin{equation*}
+    \hat{u}(\xi, t)=e^{-\xi^2 t}\hat{f}(\xi)
+\end{equation*}
+が得られる．この両辺を逆フーリエ変換すると，例\ref{ex3-3}より\(\displaystyle\mathcal{F}^*\left[e^{-\xi^2 t}\right]=\frac{1}{\sqrt{2t}}e^{-\frac{x^2}{4t}}\)なので
+\begin{equation}
+    u(x, t)=\frac{1}{\sqrt{4\pi t}}\int_{-\infty}^\infty f(y)e^{-\frac{(x-y)^2}{4t}}\mathrm{d}y \label{eq3-4}
+\end{equation}
+となる．\(\varepsilon:=\sqrt{2t}\)として定理\ref{th3-4}を適用すると，\(t\to 0\)で\(u(x, t)\)は\(f(x)\)に各点収束する．また，\(f\notin L^1(\mathbb{R})\)でも\eqref{eq3-4}は解となる．実際，補題\ref{lem2-7}と同様のエネルギー不等式を用いると，\eqref{eq3-4}で与えられる解が唯一の解であることが示される．
+\begin{equation*}
+    G(x, t)=\frac{1}{\sqrt{4\pi t}}e^{-\frac{x^2}{4t}}\quad(x\in\mathbb{R}, t>0)
+\end{equation*}
+と書けば，上の解は
+\begin{equation*}
+    u(x, t)=\int_{-\infty}^\infty G(x-y, t)f(y)\mathrm{d}y
+\end{equation*}
+と表現できる．\(G(x-y, t)\)は\(\mathbb{R}\)上の熱方程式の\textcolor{red}{グリーン関数}である\footnote{詳しくは，4回生配当「数理解析」で扱う．}．
+\subsection{半平面のディリクレ問題} \label{subsec3-9-2}
+半平面\(D\)とその境界\(\partial D\)を
+\begin{equation*}
+    D=\{(x, y)\in\mathbb{R}^2\mid y>0\},\quad\partial D=\{(x, 0)\mid x\in\mathbb{R}\}
+\end{equation*}
+として，\(u=u(x, y)\)に関する\(D\)上の(\textcolor{red}{ラプラス方程式}の)\textcolor{red}{ディリクレ問題}:
+\begin{equation*}
+    \begin{cases}
+    \frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0 & (x,y)\in D \\
+    u(x, 0)=f(x) & (x\in\mathbb{R}) \\
+    u(x, y)\to 0 & (y\to\infty)
+    \end{cases}
+\end{equation*}
+を考える．但し，\(f\in L^1(\mathbb{R})\)を有界連続関数として，\(f\)は\(\partial D\)上の境界条件を与える．ラプラス方程式の両辺を\(x\)についてフーリエ変換すると
+\begin{equation*}
+    -\xi^2\hat{u}(\xi, y)+\frac{\partial^2\hat{u}}{\partial y^2}(\xi, y)=0
+\end{equation*}
+となる．この一般解は
+\begin{equation*}
+    \hat{u}(\xi, y)=\alpha(\xi)e^{-|\xi|y}+\beta(\xi)e^{|\xi|y}
+\end{equation*}
+の形になるが，\(y\to\infty\)での条件から，\(\beta(\xi)\equiv 0\)でなければならない．すると，境界条件から
+\begin{equation*}
+    \hat{u}(\xi, 0)=\alpha(\xi)=\hat{f}(\xi),\quad\hat{u}(\xi, y)=\hat{f}(\xi)e^{-|\xi|y}
+\end{equation*}
+となる．逆フーリエ変換をすると
+\begin{eqnarray*}
+u(x, y)&=&\mathcal{F}^*\left[\hat{f}(\xi)e^{-|\xi|y}\right](x) \\
+&=&\frac{1}{\sqrt{2\pi}}\left(f*\mathcal{F}^*\left[e^{-|\xi|y}\right]\right)(x) \\
+&=&\frac{1}{\pi}\int_{-\infty}^\infty\frac{y}{(x-s)^2+y^2}f(s)\mathrm{d}s
+\end{eqnarray*}
+を得る．このとき，再び定理\ref{th3-4}を用いて，\(y\to 0\)のとき\(u(x, y)\to f(x)\)が成り立つことが分かる．また，この\(u(x, y)\)がラプラス方程式の解であることは，直接計算して示すことができる．このとき，実は\(f\)は有界連続性のみ満たしていれば十分であり，可積分でなくとも，この\(u\)はディリクレ問題の1つの解を与える．
 \end{document}
